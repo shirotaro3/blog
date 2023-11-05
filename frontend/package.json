@@ -19,7 +19,6 @@
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.8.0",
     "jotai": "^2.1.0",
-    "mabiki": "^1.0.1",
     "marked": "^5.0.4",
     "marked-gfm-heading-id": "^3.0.4",
     "marked-highlight": "^2.0.1",

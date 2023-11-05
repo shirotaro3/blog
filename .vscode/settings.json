@@ -4,9 +4,7 @@
   "editor.codeActionsOnSave": {
     "source.addMissingImports": true
   },
-  "eslint.workingDirectories": [
-    { "mode": "auto" }
-  ],
+  "eslint.workingDirectories": [{ "mode": "auto" }],
   "files.associations": {
     "*.css": "tailwindcss"
   },
@@ -14,7 +12,5 @@
     "strings": true
   },
   "typescript.referencesCodeLens.enabled": true,
-  "cSpell.works": [
-    "nextjs"
-  ]
+  "cSpell.works": ["nextjs", "consts", "dompurify", "tailwindcss", "superjson"]
 }
