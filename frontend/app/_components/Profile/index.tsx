@@ -8,7 +8,7 @@ export function Profile() {
   return (
     <>
       <FadeInBox className="box w-full">
-        <Heading level={3}>著者のプロフィール</Heading>
+        <Heading level={3}>著者について</Heading>
       </FadeInBox>
       <FadeInBox className="w-1col-md text-sm  border-x border-t lg:border-0 border-gray-400 px-4 pt-4 lg:p-0">
         <div className="bg-[#94e4fc]">
@@ -18,8 +18,12 @@ export function Profile() {
       <FadeInBox className="box-outline-joint text-sm w-2col-md">
         <div className="flex flex-col h-full">
           <div className="font-bold text-lg box-sub">YSK</div>
-          <h4 className="font-bold text-base py-2">来歴</h4>
-          <p>hoge</p>
+          <ul className="list-disc list-inside py-5 px-2">
+            <li>1992年生まれ</li>
+            <li>首都圏在住</li>
+            <li>Webエンジニア</li>
+            <li>趣味：旅行</li>
+          </ul>
           <div className="w-[230px] flex-grow mx-auto flex items-center justify-center">
             <LinkButton href="/profile" size="sm" variant="secondary">
               詳しくはこちら

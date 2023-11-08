@@ -2,21 +2,20 @@
 
 import { useEffect, useState } from 'react'
 import { useSearchParams, useRouter, usePathname } from 'next/navigation'
-import { Button } from '../../_components/Button'
-import { FadeInBox } from '../../_components/FadeInBox'
-import { Heading } from '../../_components/Heading'
-import { Post } from '../../_data/posts/types'
+import { Button } from '../Button'
+import { FadeInBox } from '../FadeInBox'
+import { Heading } from '../Heading'
 import { Card } from './Card'
+import { Post } from '@types'
+import { POST_PER_PAGE } from '@consts'
 
 type Props = {
   headingText: string
   perPage?: number
-  posts: Required<Post>[]
+  posts: Post[]
 }
 
-const PER_PAGE = 12
-
-export function PostList({ headingText, posts, perPage = PER_PAGE }: Props) {
+export function PostList({ headingText, posts, perPage = POST_PER_PAGE }: Props) {
   const { replace } = useRouter()
   const pathname = usePathname()
   const search = useSearchParams()
@@ -43,7 +42,7 @@ export function PostList({ headingText, posts, perPage = PER_PAGE }: Props) {
       </FadeInBox>
       <ul className="w-full flex flex-wrap base-gap">
         {sliced.length > 0 ? (
-          sliced.map((post) => <Card key={post.path} post={post} />)
+          sliced.map((post) => <Card key={`${post.category}/${post.id}`} post={post} />)
         ) : (
           <li>
             <p>記事がありません</p>

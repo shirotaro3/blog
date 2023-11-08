@@ -1,7 +1,5 @@
-'use client'
-
 import Link from 'next/link'
-import { SITE_TITLE, SITE_DESCRIPTION_SHORT } from '../../_consts/site'
+import { SITE_TITLE, SITE_DESCRIPTION_SHORT } from '../../_consts/config'
 
 export function Header() {
   return (
@@ -9,7 +7,7 @@ export function Header() {
       <div className="base-container h-[var(--header)] relative md:bg-white-gradient-100 z-10 flex items-center">
         <div className="flex flex-col mt-2 md:mt-0 md:flex-row items-center md:gap-10 text-white">
           <Link href="/">
-            <h1 className="inline-block text-base md:text-2xl font-bold drop-shadow duration-200 px-4 md:px-6 py-1 md:py-2">
+            <h1 className="inline-block text-xl md:text-2xl font-bold drop-shadow duration-200 px-4 md:px-6 py-1 md:py-2">
               {SITE_TITLE}
             </h1>
           </Link>
