@@ -2,19 +2,17 @@ import './globals.css'
 import { Header } from './_components/Header'
 import { Footer } from './_components/Footer'
 import { SITE_TITLE, SITE_DESCRIPTION } from './_consts/config'
-import Head from 'next/head'
+import { Metadata } from 'next'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: SITE_TITLE,
   description: SITE_DESCRIPTION,
+  robots: 'noindex',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">
-      <Head>
-        <meta name="robots" content="noindex" />
-      </Head>
       <body className="text-gray-600">
         <div id="1" />
         <Header />
