@@ -25,7 +25,7 @@ export function PostList({ headingText, posts, perPage = POST_PER_PAGE }: Props)
   const showButton = posts.length > perPage * page
 
   const handleClick = () => {
-    replace(`${pathname}/?page=${page + 1}`)
+    replace(`${pathname}/?page=${page + 1}`, { scroll: false })
   }
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export function PostList({ headingText, posts, perPage = POST_PER_PAGE }: Props)
       <FadeInBox className="box w-full">
         <Heading level={2}>{headingText}</Heading>
       </FadeInBox>
-      <ul className="w-full flex flex-wrap base-gap">
+      <ul className="w-full flex flex-wrap gap-base">
         {sliced.length > 0 ? (
           sliced.map((post) => <Card key={`${post.category}/${post.id}`} post={post} />)
         ) : (

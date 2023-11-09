@@ -1,11 +1,9 @@
-import { FadeInBox } from '../../../_components/FadeInBox'
 import { Profile } from '../../../_components/Profile'
-import { POSTS_DIR } from '../../../_consts/config'
 import { Cover } from './Cover'
 import { TableOfContent } from './TableOfContent'
 import { Content } from './Content'
 import { getAllPosts, getPostByCategoryAndId } from '@libs'
-import { Post } from '@types'
+import { RootLayout } from '../../../_components/Layout'
 
 export async function generateStaticParams() {
   const posts = await getAllPosts()
@@ -19,11 +17,13 @@ export default async function Blog({
 }) {
   const post = await getPostByCategoryAndId(category, id)
   return (
-    <div className="flex flex-wrap base-gap">
-      <Cover post={post} />
-      <TableOfContent html={post.html} />
-      <Content html={post.html} />
-      <Profile />
-    </div>
+    <RootLayout>
+      <div className="flex flex-wrap gap-base">
+        <Cover post={post} />
+        <TableOfContent html={post.html} />
+        <Content html={post.html} />
+        <Profile />
+      </div>
+    </RootLayout>
   )
 }

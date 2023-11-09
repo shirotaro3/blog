@@ -1,6 +1,7 @@
 import { Profile } from '../../_components/Profile'
 import { PostList } from '../../_components/PostList'
 import { getAllPosts, getPostsByCategory } from '@libs'
+import { RootLayout } from '../../_components/Layout'
 
 export async function generateStaticParams() {
   const posts = await getAllPosts()
@@ -21,9 +22,11 @@ export default async function Blog({ params: { category } }: any) {
   const headingText = getHeadingTextByCategory(category)
 
   return (
-    <div className="flex flex-wrap base-gap">
-      <PostList headingText={headingText} posts={posts} />
-      <Profile />
-    </div>
+    <RootLayout>
+      <div className="flex flex-wrap gap-base">
+        <PostList headingText={headingText} posts={posts} />
+        <Profile />
+      </div>
+    </RootLayout>
   )
 }

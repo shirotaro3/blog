@@ -9,52 +9,51 @@ module.exports = {
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       animation: {
         fadeIn: 'fadeIn 0.6s ease',
         scrollLeft: 'scrollLeft 6s infinite linear',
-        bgOpacity: 'bgOpacity 5s infinite linear'
+        bgOpacity: 'bgOpacity 5s infinite linear',
       },
       keyframes: {
         fadeIn: {
           '0%': {
             opacity: 0.2,
-            transform: 'translateY(0.5rem)'
+            transform: 'translateY(0.5rem)',
           },
           '100%': {
             opacity: 1,
-          }
+          },
         },
         scrollLeft: {
           '0%': {
-            transform: 'translateX(100px)'
+            transform: 'translateX(100px)',
           },
           '50%': {
-            transform: 'translateX(100px)'
+            transform: 'translateX(100px)',
           },
           '100%': {
-            transform: 'translateX(-100%)'
-          }
+            transform: 'translateX(-100%)',
+          },
         },
         bgOpacity: {
           '0%': {
-            '--bg-opacity': '0.5'
+            '--bg-opacity': '0.5',
           },
           '50%': {
-            '--bg-opacity': '0.2'
+            '--bg-opacity': '0.2',
           },
           '100%': {
-            '--bg-opacity': '0.5'
-          }
+            '--bg-opacity': '0.5',
+          },
         },
       },
     },
     backgroundImage: {
-      building: "url('/img/bg.webp')",
-      silhouette: "url('/img/siru.webp')"
-    }
+      building: `url('${process.env.NEXT_PUBLIC_BASE_PATH}/img/bg.webp')`,
+      silhouette: `url('${process.env.NEXT_PUBLIC_BASE_PATH}/img/siru.webp')`,
+    },
   },
   plugins: [],
 }

@@ -3,6 +3,7 @@
 import { FadeInBox } from '../FadeInBox'
 import { Heading } from '../Heading'
 import { LinkButton } from '../LinkButton'
+import { Image } from '../../_components/ImageWrapper'
 
 export function Profile() {
   return (
@@ -12,7 +13,13 @@ export function Profile() {
       </FadeInBox>
       <FadeInBox className="w-1col-md text-sm  border-x border-t lg:border-0 border-gray-400 px-4 pt-4 lg:p-0">
         <div className="bg-[#94e4fc]">
-          <img src="/img/kawauso.webp" className="w-[200px] lg:w-full block m-auto" />
+          <Image
+            src="/img/kawauso.webp"
+            className="w-[200px] lg:w-full block m-auto"
+            alt="profile image"
+            width={100}
+            height={100}
+          />
         </div>
       </FadeInBox>
       <FadeInBox className="box-outline-joint text-sm w-2col-md">

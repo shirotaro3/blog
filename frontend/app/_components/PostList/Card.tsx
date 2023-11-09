@@ -3,6 +3,7 @@
 import type { Post } from '@types'
 import Link from 'next/link'
 import { useInView } from 'react-intersection-observer'
+import { Image } from '../../_components/ImageWrapper'
 
 type Props = {
   post: Post
@@ -19,7 +20,6 @@ export function Card({ post }: Props) {
         href={`/posts/${post.category}/${post.id}`}
         ref={ref}
         className="block transition lg:opacity-70 border lg:hover:border-gray-400 lg:hover:opacity-100 overflow-hidden lg:[&:hover_.card-cover]:scale-110 duration-300 bg-white"
-        scroll={false}
       >
         <div className="h-[200px] overflow-hidden">
           <div className="card-cover duration-300 relative">
@@ -28,7 +28,13 @@ export function Card({ post }: Props) {
                 <div className="mx-5">{post.title}</div>
               </div>
             </div>
-            <img src={post.cover || DEFAULT_COVER_PATH} className="w-full h-[200px]" />
+            <Image
+              src={post.cover || DEFAULT_COVER_PATH}
+              className="w-full h-[200px]"
+              alt=""
+              width={100}
+              height={100}
+            />
           </div>
         </div>
         <div className="p-4">

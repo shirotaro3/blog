@@ -1,5 +1,6 @@
 import type { Post } from '@types'
 import { FadeInBox } from '../../../_components/FadeInBox'
+import { Image } from '../../../_components/ImageWrapper'
 
 type Props = {
   post: Post
@@ -13,7 +14,13 @@ export function Cover({ post }: Props) {
           <div className="mx-5">{post.title}</div>
         </div>
       </div>
-      <img src={post.cover} className="w-full h-[250px] md:h-[300px] lg:h-[400px]" />
+      <Image
+        src={post.cover}
+        className="w-full h-[250px] md:h-[300px] lg:h-[400px]"
+        alt="cover"
+        width={100}
+        height={100}
+      />
     </FadeInBox>
   )
 }
