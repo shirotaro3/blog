@@ -1,7 +1,7 @@
-import { PostList } from './_components/PostList'
-import { Profile } from './_components/Profile'
-import { getAllPosts } from './_libs/markdown'
-import { RootLayout } from './_components/Layout'
+import { PostList } from '@/components/PostList'
+import { Profile } from '@/components/Profile'
+import { RootLayout } from '@/components/Layout'
+import { getAllPosts } from '@/libs/markdown'
 
 export default async function Home() {
   const posts = await getAllPosts()

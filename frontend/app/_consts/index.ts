@@ -1,1 +1,1 @@
-export { SITE_TITLE, SITE_DESCRIPTION, SITE_DESCRIPTION_SHORT, POST_PER_PAGE } from './config'
+export * from './config'

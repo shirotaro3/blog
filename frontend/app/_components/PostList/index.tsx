@@ -2,12 +2,13 @@
 
 import { useEffect, useState } from 'react'
 import { useSearchParams, useRouter, usePathname } from 'next/navigation'
-import { Button } from '../Button'
-import { FadeInBox } from '../FadeInBox'
-import { Heading } from '../Heading'
-import { Card } from './Card'
+import clsx from 'clsx'
+import { Button } from '@/components/Button'
+import { FadeInBox } from '@/components/FadeInBox'
+import { Heading } from '@/components/Heading'
 import { Post } from '@types'
 import { POST_PER_PAGE } from '@consts'
+import { Card } from './Card'
 
 type Props = {
   headingText: string
@@ -37,10 +38,10 @@ export function PostList({ headingText, posts, perPage = POST_PER_PAGE }: Props)
 
   return (
     <>
-      <FadeInBox className="box w-full">
+      <FadeInBox className={clsx('w-full')}>
         <Heading level={2}>{headingText}</Heading>
       </FadeInBox>
-      <ul className="w-full flex flex-wrap gap-base">
+      <ul className={clsx('w-full flex flex-wrap gap-base')}>
         {sliced.length > 0 ? (
           sliced.map((post) => <Card key={`${post.category}/${post.id}`} post={post} />)
         ) : (
@@ -50,10 +51,10 @@ export function PostList({ headingText, posts, perPage = POST_PER_PAGE }: Props)
         )}
       </ul>
       {showButton && (
-        <div className="w-full">
-          <div className="w-1col m-auto">
+        <div className={clsx('w-full')}>
+          <FadeInBox className={clsx('w-1col m-auto')}>
             <Button onClick={handleClick}>More...</Button>
-          </div>
+          </FadeInBox>
         </div>
       )}
     </>

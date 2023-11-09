@@ -12,5 +12,14 @@
     "strings": true
   },
   "typescript.referencesCodeLens.enabled": true,
-  "cSpell.works": ["nextjs", "consts", "dompurify", "tailwindcss", "superjson", "rehype", "shiki"]
+  "cSpell.works": [
+    "nextjs",
+    "consts",
+    "dompurify",
+    "tailwindcss",
+    "superjson",
+    "rehype",
+    "shiki",
+    "clsx"
+  ]
 }

@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import { SITE_TITLE, SITE_DESCRIPTION_SHORT } from '../../_consts/config'
+import { SITE_TITLE, SITE_DESCRIPTION_SHORT } from '@consts'
 
 export function Header() {
   return (
-    <header className="bg-building relative top-0 z-10 overflow-hidden w-full h-[var(--header)]">
+    <header className="bg-building md:fixed relative top-0 z-10 overflow-hidden w-full h-[var(--header)]">
       <div className="base-container h-[var(--header)] relative md:bg-white-gradient-100 z-10 flex items-center">
         <div className="flex flex-col mt-2 md:mt-0 md:flex-row items-center md:gap-10 text-white">
           <Link href="/">

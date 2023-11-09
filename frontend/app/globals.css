@@ -91,9 +91,9 @@
       transparent 100%
     );
   }
-  /* .bg-left-top-80 {
+  .bg-left-top-80 {
     background-position: left top var(--header) !important;
-  } */
+  }
   /* markdown */
   .md-content h2,
   .md-content h3 {

@@ -1,15 +1,18 @@
-import { ComponentProps } from "react"
-import { useInView } from "react-intersection-observer"
+import { ComponentProps } from 'react'
+import clsx from 'clsx'
 
 type Props = ComponentProps<'button'> & { size?: 'sm' | 'lg' }
 
+// const buttonClass = {
+//   sm: 'w-full font-bold flex justify-center items-center border duration-300',
+//   lg: 'w-full font-bold flex justify-center items-center border duration-300'
+// }
+
 export function Button({ children, onClick, size = 'lg' }: Props) {
-  const { ref, inView } = useInView({ triggerOnce: true })
-  const inViewClass = inView ? 'animate-fadeIn' : 'opacity-0'
   const sizeClass = size === 'lg' ? 'button-lg' : 'button-sm'
 
   return (
-    <button ref={ref} className={`button button-primary ${inViewClass} ${sizeClass}`} onClick={onClick}>
+    <button onClick={onClick} className={clsx('button button-primary', sizeClass)}>
       {children}
     </button>
   )

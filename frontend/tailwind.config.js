@@ -13,39 +13,60 @@ module.exports = {
       },
       animation: {
         fadeIn: 'fadeIn 0.6s ease',
-        scrollLeft: 'scrollLeft 6s infinite linear',
-        bgOpacity: 'bgOpacity 5s infinite linear',
+        growWidth: 'growWidth 0.8s ease',
+        growHeight: 'growHeight 0.8s ease',
+        fadeInColor: 'fadeInColor 0.6s ease',
       },
       keyframes: {
         fadeIn: {
           '0%': {
-            opacity: 0.2,
-            transform: 'translateY(0.5rem)',
+            opacity: 0,
+          },
+          '30%': {
+            opacity: 0,
           },
           '100%': {
             opacity: 1,
           },
         },
-        scrollLeft: {
+        growWidth: {
           '0%': {
-            transform: 'translateX(100px)',
+            width: 0,
+            opacity: 1,
           },
-          '50%': {
-            transform: 'translateX(100px)',
+          '30%': {
+            width: '100%',
+            opacity: 0.7,
           },
           '100%': {
-            transform: 'translateX(-100%)',
+            opacity: 0,
           },
         },
-        bgOpacity: {
+        growHeight: {
           '0%': {
-            '--bg-opacity': '0.5',
+            height: 0,
+            opacity: 1,
           },
-          '50%': {
-            '--bg-opacity': '0.2',
+          '30%': {
+            height: '100%',
+            opacity: 0.7,
           },
           '100%': {
-            '--bg-opacity': '0.5',
+            opacity: 0,
+          },
+        },
+        fadeInColor: {
+          '0%': {
+            '--bg-opacity': 0,
+            'border-opacity': 0,
+          },
+          '30%': {
+            '--bg-opacity': 0,
+            'border-opacity': 0,
+          },
+          '100%': {
+            '--bg-opacity': 1,
+            'border-opacity': 1,
           },
         },
       },

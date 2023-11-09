@@ -1,5 +1,5 @@
 import './globals.css'
-import { SITE_TITLE, SITE_DESCRIPTION } from './_consts/config'
+import { SITE_TITLE, SITE_DESCRIPTION } from '@consts'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {

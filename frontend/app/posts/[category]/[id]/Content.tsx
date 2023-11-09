@@ -1,4 +1,4 @@
-import { FadeInBox } from '../../../_components/FadeInBox'
+import { FadeInBox } from '@/components/FadeInBox'
 
 type Props = {
   html: string
@@ -6,8 +6,8 @@ type Props = {
 
 export function Content({ html }: Props) {
   return (
-    <FadeInBox className="box w-full md-content">
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+    <FadeInBox className="w-full">
+      <div className="box md-content" dangerouslySetInnerHTML={{ __html: html }} />
     </FadeInBox>
   )
 }
