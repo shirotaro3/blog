@@ -10,12 +10,38 @@ import rehypeSlug from 'rehype-slug'
 import rehypeStringify from 'rehype-stringify'
 import rehypeShiki from '@leafac/rehype-shiki'
 import { getHighlighter } from 'shiki'
+import { VFileWithOutput } from 'unified/lib'
 
 let p: ReturnType<typeof getParserPre> | undefined
+
+// TODO: any直す
+function remarkHeadings() {
+  return (tree: any, file: VFileWithOutput<any>) => {
+    const headings = tree.children
+      .filter((node: any) => {
+        return node.type === 'heading'
+      })
+      .map((node: any) => {
+        return {
+          depth: node.depth,
+          text: node.children
+            .filter((node: any) => {
+              return node.type === 'text'
+            })
+            .map((node: any) => {
+              return node.value
+            })
+            .join(''),
+        }
+      })
+    file.data.headings = headings
+  }
+}
 
 async function getParserPre() {
   return unified()
     .use(remarkParse)
+    .use(remarkHeadings)
     .use(remarkRehype)
     .use(remarkGfm)
     .use(rehypeShiki as any, {
@@ -59,6 +85,7 @@ export async function getPostByCategoryAndId(category: string, id: string) {
     cover: data.cover,
     date: `${new Date(data.date)?.toISOString().slice(0, 10)}`,
     html: html.value.toString(),
+    headings: html.data.headings as { depth: number; text: string }[], // TODO
   }
 }
 
