@@ -40,6 +40,9 @@
   .box {
     @apply p-4 bg-white bg-opacity-30;
   }
+  .box-white {
+    @apply p-4 bg-white;
+  }
   .box-outline {
     @apply border border-gray-400 p-4;
   }

@@ -9,7 +9,7 @@ export default async function Home() {
   return (
     <RootLayout>
       <div className="flex flex-wrap gap-base">
-        <PostList headingText="新着記事" perPage={1} posts={posts} />
+        <PostList headingText="新着記事" perPage={6} posts={posts} />
         <Profile />
       </div>
     </RootLayout>

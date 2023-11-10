@@ -7,7 +7,7 @@ import { useBreadCrumbs } from './useBreadCrumbs'
 export function BreadCrumbs() {
   const breadCrumbs = useBreadCrumbs()
   return (
-    <ol className={clsx('flex h-4 items-center text-sm')}>
+    <ol className={clsx('flex h-2 items-center text-sm')}>
       {breadCrumbs.map(({ path, text }) => {
         return (
           <li

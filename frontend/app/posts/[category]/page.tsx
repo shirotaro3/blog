@@ -12,7 +12,7 @@ export async function generateStaticParams() {
 function getHeadingTextByCategory(category: string) {
   let headingText = ''
   if (category === 'tech') headingText = '技術 に関する記事'
-  if (category === 'life') headingText = '暮らし に関する記事'
+  if (category === 'travel') headingText = '旅行 に関する記事'
   if (category === 'portfolio') headingText = 'ポートフォリオ'
   return headingText
 }

@@ -8,20 +8,25 @@ type Props = {
     depth: number
     text: string
   }[]
+  toc: boolean
 }
 
-export function TableOfContent({ headings }: Props) {
-  //TODO
+export function TableOfContent({ headings, toc }: Props) {
+  if (toc === false) return null
   return (
-    <FadeInBox className="w-1col-md">
-      <div className="box-outline h-full">
+    <FadeInBox className={clsx('w-1col-md -mt-5 after:!border-y-0', 'lg:mt-0 lg:after:!border-y')}>
+      <div className="box-white h-full">
         <h3 className="font-bold text-lg box-sub">目次</h3>
-        <ol className="list-disc pl-5">
+        <ol className="px-2">
           {headings.map((heading, i) => (
             <li
               key={i}
               data-depth={heading.depth}
-              className={clsx('pt-2', 'data-[depth="3"]:ml-5 data-[depth="4"]:ml-10')}
+              className={clsx(
+                'pt-1 md:pt-2',
+                'data-[depth="3"]:ml-3 data-[depth="3"]:text-sm',
+                'data-[depth="4"]:ml-6 data-[depth="4"]:text-sm',
+              )}
             >
               <a
                 href={`#${heading.text

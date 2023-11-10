@@ -83,7 +83,9 @@ export async function getPostByCategoryAndId(category: string, id: string) {
     id: realId,
     category: category,
     cover: data.cover,
-    date: `${new Date(data.date)?.toISOString().slice(0, 10)}`,
+    date: data.date,
+    lastUpdated: data.lastUpdated,
+    toc: data.toc,
     html: html.value.toString(),
     headings: html.data.headings as { depth: number; text: string }[], // TODO
   }

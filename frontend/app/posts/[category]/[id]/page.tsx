@@ -20,8 +20,8 @@ export default async function Blog({
     <RootLayout>
       <div className="flex flex-wrap gap-base">
         <Cover post={post} />
-        <TableOfContent headings={post.headings} />
-        <Content html={post.html} />
+        <TableOfContent headings={post.headings} toc={post.toc} />
+        <Content post={post} />
         <Profile />
       </div>
     </RootLayout>

@@ -12,20 +12,22 @@ export function Profile() {
       <FadeInBox className={clsx('w-full')}>
         <Heading level={3}>著者について</Heading>
       </FadeInBox>
-      <FadeInBox
-        className={clsx(
-          'w-1col-md text-sm border-x border-t border-gray-400 px-4 pt-4',
-          'lg:border-0 lg:p-0',
-        )}
-      >
-        <div className={clsx('bg-[#94e4fc]')}>
-          <Image
-            src="/img/kawauso.webp"
-            className={clsx('w-[200px] block m-auto', 'lg:w-full')}
-            alt="profile image"
-            width={100}
-            height={100}
-          />
+      <FadeInBox className={clsx('w-1col-md')}>
+        <div
+          className={clsx(
+            'text-sm border-x border-t border-gray-400 px-4 pt-4',
+            'lg:border-0 lg:p-0',
+          )}
+        >
+          <div className={clsx('bg-[#94e4fc]')}>
+            <Image
+              src="/img/kawauso.webp"
+              className={clsx('w-[200px] block m-auto', 'lg:w-full')}
+              alt="profile image"
+              width={100}
+              height={100}
+            />
+          </div>
         </div>
       </FadeInBox>
       <FadeInBox className={clsx('w-2col-md')}>
