@@ -2,9 +2,7 @@ import { RootLayout } from '@/components/Layout'
 import { Profile } from '@/components/Profile'
 import { config } from '@/data/siteConfig'
 import { getAllPosts, getPostByCategoryAndId } from '@/libs/markdown'
-import { Content } from './Content'
-import { Cover } from './Cover'
-import { TableOfContent } from './TableOfContent'
+import { Post } from './Post'
 
 export async function generateStaticParams() {
   const posts = await getAllPosts()
@@ -35,9 +33,7 @@ export default async function Blog({
   return (
     <RootLayout>
       <div className="flex flex-wrap gap-base">
-        <Cover post={post} />
-        <TableOfContent headings={post.headings} toc={post.toc} />
-        <Content post={post} />
+        <Post post={post} />
         <Profile />
       </div>
     </RootLayout>

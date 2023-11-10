@@ -2,7 +2,7 @@ import Link from 'next/link'
 import clsx from 'clsx'
 import type { Post } from '@types'
 import { FadeInBox } from '@/components/FadeInBox'
-import { Image } from '@/components/ImageWrapper'
+import { Image } from '@/components/Image'
 import { categories } from '@/data/categories'
 
 type Props = {
@@ -36,8 +36,6 @@ export function Card({ post }: Props) {
               src={post.cover || DEFAULT_COVER_PATH}
               className={clsx('w-full md:h-[200px]')}
               alt="cover image"
-              width={100}
-              height={100}
             />
           </div>
         </div>

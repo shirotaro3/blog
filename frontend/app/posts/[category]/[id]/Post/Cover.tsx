@@ -1,8 +1,7 @@
 import Link from 'next/link'
 import clsx from 'clsx'
 import type { Post } from '@types'
-import { FadeInBox } from '@/components/FadeInBox'
-import { Image } from '@/components/ImageWrapper'
+import { Image } from '@/components/Image'
 import { categories } from '@/data/categories'
 
 type Props = {
@@ -31,10 +30,9 @@ function Meta({ post }: Props) {
 }
 
 export function Cover({ post }: Props) {
-  const widthClass = post.toc ? 'w-2col-md' : 'w-full'
   const lgTextClass = post.toc ? 'lg:text-3xl' : 'lg:text-4xl'
   return (
-    <FadeInBox className={clsx('after:lg-only-border-b', widthClass)}>
+    <>
       <div className="relative">
         <div className={clsx('absolute flex justify-center items-center w-full h-full')}>
           <div
@@ -47,9 +45,9 @@ export function Cover({ post }: Props) {
             <div className={clsx('mx-3 md:mx-5')}>{post.title}</div>
           </div>
         </div>
-        <Image src={post.cover} className="w-full" alt="cover" width={100} height={100} />
+        <Image src={post.cover} className="w-full" alt="cover" />
       </div>
       <Meta post={post} />
-    </FadeInBox>
+    </>
   )
 }
