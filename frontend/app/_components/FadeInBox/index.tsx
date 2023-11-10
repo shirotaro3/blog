@@ -1,8 +1,8 @@
 'use client'
 
-import { ComponentProps, ElementType, JSX } from 'react'
-import { useInView } from 'react-intersection-observer'
+import { ComponentProps } from 'react'
 import clsx from 'clsx'
+import { useInView } from 'react-intersection-observer'
 
 type Props = ComponentProps<'div'>
 
@@ -19,8 +19,8 @@ export function FadeInBox({ children, className }: Props) {
         inViewAfterClass,
         inViewBeforeClass,
         'relative',
-        'after:absolute after:border-y after:top-0 after:bottom-0 after:border-gray-600 after:translate-x-[-50%] after:left-[50%] box-content',
-        'before:absolute before:border-x before:left-0 before:right-0 before:border-gray-600 before:translate-y-[-50%] before:top-[50%] box-content',
+        'after:absolute after:border-y after:top-0 after:bottom-0 after:border-grayscale-500 after:translate-x-[-50%] after:left-[50%] box-content',
+        'before:absolute before:border-x before:left-0 before:right-0 before:border-grayscale-500 before:translate-y-[-50%] before:top-[50%] box-content',
       )}
     >
       <div ref={ref} className={clsx(inViewInnerClass, 'h-full w-full')}>

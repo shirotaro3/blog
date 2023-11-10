@@ -1,5 +1,3 @@
-'use client'
-
 import clsx from 'clsx'
 import { FadeInBox } from '@/components/FadeInBox'
 
@@ -14,9 +12,15 @@ type Props = {
 export function TableOfContent({ headings, toc }: Props) {
   if (toc === false) return null
   return (
-    <FadeInBox className={clsx('w-1col-md -mt-5 after:!border-y-0', 'lg:mt-0 lg:after:!border-y')}>
-      <div className="box-white h-full">
-        <h3 className="font-bold text-lg box-sub">目次</h3>
+    <FadeInBox
+      className={clsx(
+        'w-1col-md -mt-5',
+        'after:lg-only-border-t after:lg-only-border-b',
+        'lg:mt-0',
+      )}
+    >
+      <div className="bg-brightness-80 p-4 h-full">
+        <h3 className="font-bold text-lg p-2 border-b border-grayscale-400">目次</h3>
         <ol className="px-2">
           {headings.map((heading, i) => (
             <li

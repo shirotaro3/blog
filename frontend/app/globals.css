@@ -29,29 +29,6 @@
     height: calc(100vh - var(--header) - 4rem);
     height: calc(100svh - var(--header) - 4rem);
   }
-  /* animation */
-  .animation-duration-8000 {
-    animation-duration: 8s;
-  }
-  .animation-duration-10000 {
-    animation-duration: 10s;
-  }
-  /* box */
-  .box {
-    @apply p-4 bg-white bg-opacity-30;
-  }
-  .box-white {
-    @apply p-4 bg-white;
-  }
-  .box-outline {
-    @apply border border-gray-400 p-4;
-  }
-  .box-outline-joint {
-    @apply border-x border-b lg:border border-gray-400 p-4 -mt-5 lg:m-0;
-  }
-  .box-sub {
-    @apply p-2 md:bg-black md:bg-opacity-10 border-b md:border-0 border-gray-400;
-  }
   /* flex */
   .gap-base {
     @apply gap-5 md:gap-5 lg:gap-4 xl:gap-8;
@@ -68,22 +45,6 @@
   .w-1col-md {
     @apply w-full lg:w-[calc(33.33%-(2rem/3))] xl:w-[calc(33.33%-(4rem/3))];
   }
-  /* button */
-  .button {
-    @apply w-full font-bold flex justify-center items-center border duration-300;
-  }
-  .button-primary {
-    @apply bg-blue-300 text-white lg:hover:bg-white lg:hover:text-blue-300 active:bg-white active:text-blue-300 border-blue-300;
-  }
-  .button-secondary {
-    @apply bg-white text-blue-300 lg:hover:bg-blue-300 lg:hover:text-white active:bg-blue-300 active:text-white border-blue-300;
-  }
-  .button-lg {
-    @apply h-14 text-lg;
-  }
-  .button-sm {
-    @apply h-10 text-base;
-  }
   /* background */
   .bg-white-gradient-100 {
     background: linear-gradient(
@@ -98,9 +59,11 @@
     background-position: left top var(--header) !important;
   }
   /* markdown */
-  .md-content h2,
+  .md-content h2 {
+    @apply bg-grayscale-200 text-xl px-2 py-4 border-b border-grayscale-400 font-bold my-6;
+  }
   .md-content h3 {
-    @apply text-lg p-2 bg-black bg-opacity-20 font-bold my-6;
+    @apply text-lg p-2 border-b border-grayscale-400 font-bold my-6;
   }
   .md-content h2 a,
   .md-content h3 a,
@@ -108,7 +71,7 @@
     @apply text-current hover:underline no-underline text-xs inline-block pr-1;
   }
   .md-content h4 {
-    @apply font-bold text-base pb-1 px-1 my-6 border-b border-gray-400;
+    @apply font-bold text-base pb-1 px-1 my-6 border-b border-grayscale-400;
   }
   .md-content p {
     @apply mb-2;
@@ -120,7 +83,17 @@
     @apply font-bold;
   }
   .md-content a {
-    @apply text-blue-500 underline;
+    @apply underline lg:hover:no-underline;
+  }
+  /* others */
+  .lg-only-border-b {
+    @apply !border-b-0 lg:!border-b;
+  }
+  .lg-only-border-t {
+    @apply !border-t-0 lg:!border-t;
+  }
+  .link {
+    @apply underline lg:hover:no-underline;
   }
 }
 

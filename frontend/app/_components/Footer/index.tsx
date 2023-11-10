@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="bg-yellow-700 bg-opacity-20">
+    <footer className="bg-footer">
       <div className="h-[var(--footer)] base-container text-sm flex flex-col gap-2 justify-center items-center">
         <div className="flex w-full text-xs">
           <ul className="w-1/2 text-center">

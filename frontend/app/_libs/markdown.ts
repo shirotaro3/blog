@@ -79,8 +79,9 @@ export async function getPostByCategoryAndId(category: string, id: string) {
 
   return {
     ...data,
-    title: data.title,
     id: realId,
+    title: data.title,
+    description: data.description,
     category: category,
     cover: data.cover,
     date: data.date,

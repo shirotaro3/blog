@@ -3,11 +3,11 @@
 import { useEffect, useState } from 'react'
 import { useSearchParams, useRouter, usePathname } from 'next/navigation'
 import clsx from 'clsx'
+import { Post } from '@types'
 import { Button } from '@/components/Button'
 import { FadeInBox } from '@/components/FadeInBox'
 import { Heading } from '@/components/Heading'
-import { Post } from '@types'
-import { POST_PER_PAGE } from '@consts'
+import { config } from '@/data/siteConfig'
 import { Card } from './Card'
 
 type Props = {
@@ -16,7 +16,7 @@ type Props = {
   posts: Post[]
 }
 
-export function PostList({ headingText, posts, perPage = POST_PER_PAGE }: Props) {
+export function PostList({ headingText, posts, perPage = config.POST_PER_PAGE }: Props) {
   const { replace } = useRouter()
   const pathname = usePathname()
   const search = useSearchParams()

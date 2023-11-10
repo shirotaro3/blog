@@ -1,7 +1,7 @@
-import { Header } from '@/components/Header'
-import { Footer } from '@/components/Footer'
 import clsx from 'clsx'
 import { BreadCrumbs } from '@/components/BreadCrumbs'
+import { Footer } from '@/components/Footer'
+import { Header } from '@/components/Header'
 
 export function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -9,7 +9,7 @@ export function RootLayout({ children }: { children: React.ReactNode }) {
       <Header />
       <div
         className={clsx(
-          'flex-grow bg-gray-200 flex flex-col bg-silhouette bg-repeat-x',
+          'flex-grow bg-grayscale-200 flex flex-col bg-silhouette bg-repeat-x',
           'md:pt-[var(--header)] md:bg-left-top-80 md:bg-fixed',
         )}
       >

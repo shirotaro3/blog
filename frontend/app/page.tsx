@@ -2,6 +2,21 @@ import { PostList } from '@/components/PostList'
 import { Profile } from '@/components/Profile'
 import { RootLayout } from '@/components/Layout'
 import { getAllPosts } from '@/libs/markdown'
+import { config } from '@/data/siteConfig'
+
+export async function generateMetadata() {
+  return {
+    title: config.SITE_TITLE,
+    description: config.SITE_DESCRIPTION,
+    // image: `${config.SITE_URL}/${post.cover}`,
+    'og:title': config.SITE_TITLE,
+    'og:description': config.SITE_DESCRIPTION,
+    // 'og:image': `${config.SITE_URL}/${post.cover}`,
+    'og:url': config.SITE_URL,
+    'og:site_name': config.SITE_TITLE,
+    'twitter:card': 'summary_large_image',
+  }
+}
 
 export default async function Home() {
   const posts = await getAllPosts()
@@ -9,7 +24,7 @@ export default async function Home() {
   return (
     <RootLayout>
       <div className="flex flex-wrap gap-base">
-        <PostList headingText="新着記事" perPage={6} posts={posts} />
+        <PostList headingText="新着記事" perPage={1} posts={posts} />
         <Profile />
       </div>
     </RootLayout>

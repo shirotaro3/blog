@@ -1,10 +1,9 @@
-'use client'
-
-import type { Post } from '@types'
 import Link from 'next/link'
 import clsx from 'clsx'
-import { Image } from '@/components/ImageWrapper'
+import type { Post } from '@types'
 import { FadeInBox } from '@/components/FadeInBox'
+import { Image } from '@/components/ImageWrapper'
+import { categories } from '@/data/categories'
 
 type Props = {
   post: Post
@@ -19,10 +18,10 @@ export function Card({ post }: Props) {
         href={`/posts/${post.category}/${post.id}`}
         className={clsx(
           'block transition border overflow-hidden duration-300 bg-white',
-          'lg:[&:hover_.card-cover]:scale-110 lg:opacity-90 lg:hover:border-gray-400 lg:hover:opacity-100',
+          'lg:[&:hover_.card-cover]:scale-110 lg:opacity-90 lg:hover:border-grayscale-400 lg:hover:opacity-100',
         )}
       >
-        <div className={clsx(' md:h-[200px] overflow-hidden')}>
+        <div className={clsx('overflow-hidden', 'md:h-[200px]')}>
           <div className={clsx('card-cover duration-300 relative')}>
             <div className={clsx('absolute flex justify-center items-center w-full h-full')}>
               <div
@@ -44,7 +43,10 @@ export function Card({ post }: Props) {
         </div>
         <div className={clsx('p-4')}>
           <h3>{post.title}</h3>
-          <span className={clsx('text-sm text-gray-500')}>{post.date}</span>
+          <div className={clsx('flex justify-between items-center text-sm')}>
+            <span className={clsx('text-grayscale-500')}>{post.date}</span>
+            <span className={clsx('text-xs')}>📂 {categories[post.category]}</span>
+          </div>
         </div>
       </Link>
     </FadeInBox>

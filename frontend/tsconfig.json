@@ -26,7 +26,6 @@
       "@/hooks/*": ["./app/_hooks/*"],
       "@/libs/*": ["./app/_libs/*"],
       "@/data/*": ["./app/_data/*"],
-      "@consts": ["./app/_consts/index.ts"],
       "@types": ["./app/_types/index.ts"]
     }
   },
