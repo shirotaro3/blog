@@ -2,20 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-} */
-
 @layer components {
   /* layout */
   .base-container {
@@ -28,6 +14,15 @@
   .h-main {
     height: calc(100vh - var(--header) - 4rem);
     height: calc(100svh - var(--header) - 4rem);
+  }
+  .box-base {
+    @apply p-4;
+  }
+  .box-white {
+    @apply box-base bg-brightness-80;
+  }
+  .box-gray {
+    @apply box-base bg-brightness-40;
   }
   /* flex */
   .gap-base {
@@ -59,11 +54,14 @@
     background-position: left top var(--header) !important;
   }
   /* markdown */
+  .md-content {
+    @apply text-sm md:text-base;
+  }
   .md-content h2 {
-    @apply bg-grayscale-200 text-xl px-2 py-4 border-b border-grayscale-400 font-bold my-6;
+    @apply bg-grayscale-200 text-xl px-2 py-4 border-b border-grayscale-400 font-bold mb-6;
   }
   .md-content h3 {
-    @apply text-lg p-2 border-b border-grayscale-400 font-bold my-6;
+    @apply text-lg px-2 pb-2 pt-1 border-b border-grayscale-400 font-bold mb-6;
   }
   .md-content h2 a,
   .md-content h3 a,
@@ -74,7 +72,7 @@
     @apply font-bold text-base pb-1 px-1 my-6 border-b border-grayscale-400;
   }
   .md-content p {
-    @apply mb-2;
+    @apply mb-6;
   }
   .md-content pre {
     @apply mb-2 p-4;
@@ -84,6 +82,9 @@
   }
   .md-content a {
     @apply underline lg:hover:no-underline;
+  }
+  .md-content hr {
+    @apply mb-6 border-grayscale-400;
   }
   /* others */
   .lg-only-border-b {
@@ -111,4 +112,5 @@
 :root {
   --header: 80px;
   --footer: 120px;
+  @apply md:scroll-p-[var(--header)];
 }

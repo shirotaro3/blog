@@ -2,10 +2,14 @@ import clsx from 'clsx'
 import { BreadCrumbs } from '@/components/BreadCrumbs'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
+import { HamburgerMenu } from '../HamburgerMenu'
+import { Overlay } from './Overlay'
 
 export function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
+      <HamburgerMenu />
+      <Overlay />
       <Header />
       <div
         className={clsx(

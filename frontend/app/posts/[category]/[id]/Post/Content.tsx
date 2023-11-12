@@ -7,7 +7,7 @@ type Props = {
 
 export function Content({ post }: Props) {
   return (
-    <article className={clsx('bg-brightness-80 p-4')}>
+    <article className={clsx('box-white')}>
       <div className={clsx('md-content')} dangerouslySetInnerHTML={{ __html: post.html }} />
     </article>
   )

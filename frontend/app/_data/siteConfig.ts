@@ -1,7 +1,6 @@
 export const config = {
   SITE_TITLE: "YSK's note",
-  SITE_DESCRIPTION: 'hogehoge',
-  SITE_DESCRIPTION_SHORT: '',
+  SITE_DESCRIPTION: 'YSKによる趣味の旅行や技術に関するブログです。',
   SITE_URL: 'https://ysk-note.com',
-  POST_PER_PAGE: 12,
+  POST_PER_PAGE: 6,
 }

@@ -15,7 +15,7 @@ export function Heading({ level, children, className }: Props) {
   return createElement(
     elementType,
     {
-      className: clsx(className, 'font-bold text-lg p-4 bg-brightness-40'),
+      className: clsx(className, 'font-bold text-lg box-gray'),
     },
     [...children],
   )

@@ -1,9 +1,7 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.addMissingImports": true
-  },
+  "editor.codeActionsOnSave": ["source.addMissingImports", "source.fixAll.eslint"],
   "eslint.workingDirectories": [{ "mode": "auto" }],
   "files.associations": {
     "*.css": "tailwindcss"
@@ -12,7 +10,7 @@
     "strings": true
   },
   "typescript.referencesCodeLens.enabled": true,
-  "cSpell.works": [
+  "cSpell.words": [
     "nextjs",
     "consts",
     "dompurify",

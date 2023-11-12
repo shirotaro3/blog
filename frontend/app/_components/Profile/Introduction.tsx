@@ -2,7 +2,7 @@ import clsx from 'clsx'
 
 export function Introduction() {
   return (
-    <div className={clsx('flex flex-col lg:h-full bg-brightness-80 p-4 text-sm')}>
+    <div className={clsx('flex flex-col lg:h-full box-white text-sm')}>
       <div className={clsx('font-bold text-lg p-2 border-b border-grayscale-400')}>YSK</div>
       <ul className={clsx('list-disc list-inside py-5 px-2')}>
         <li>199X年生まれ</li>

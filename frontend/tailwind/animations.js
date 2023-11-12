@@ -1,6 +1,7 @@
 module.exports = {
   animation: {
     fadeIn: 'fadeIn 0.7s ease',
+    bgFadeIn: 'bgFadeIn 0.7s ease',
     growWidth: 'growWidth 0.9s ease',
     growHeight: 'growHeight 0.9s ease',
   },
@@ -14,6 +15,17 @@ module.exports = {
       },
       '100%': {
         opacity: 1,
+      },
+    },
+    bgFadeIn: {
+      '0%': {
+        backgroundColor: 'rgba(0, 0, 0, 0)',
+      },
+      '30%': {
+        backgroundColor: 'rgba(0, 0, 0, 0)',
+      },
+      '100%': {
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
       },
     },
     growWidth: {

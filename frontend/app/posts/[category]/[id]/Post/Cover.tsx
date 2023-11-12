@@ -12,7 +12,7 @@ function Meta({ post }: Props) {
   return (
     <ul
       className={clsx(
-        'text-xs bg-brightness-80 p-4 flex flex-wrap justify-end gap-x-2',
+        'text-xs p-4 flex flex-wrap justify-end gap-x-2',
         'md:text-sm',
         '[&>dt]:pl-3',
       )}
@@ -32,7 +32,7 @@ function Meta({ post }: Props) {
 export function Cover({ post }: Props) {
   const lgTextClass = post.toc ? 'lg:text-3xl' : 'lg:text-4xl'
   return (
-    <>
+    <div className={clsx('lg:h-full', 'bg-brightness-80')}>
       <div className="relative">
         <div className={clsx('absolute flex justify-center items-center w-full h-full')}>
           <div
@@ -48,6 +48,6 @@ export function Cover({ post }: Props) {
         <Image src={post.cover} className="w-full" alt="cover" />
       </div>
       <Meta post={post} />
-    </>
+    </div>
   )
 }

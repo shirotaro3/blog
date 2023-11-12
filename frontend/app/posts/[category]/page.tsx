@@ -1,6 +1,7 @@
 import { RootLayout } from '@/components/Layout'
 import { PostList } from '@/components/PostList'
 import { Profile } from '@/components/Profile'
+import { categories } from '@/data/categories'
 import { config } from '@/data/siteConfig'
 import { getAllPosts, getPostsByCategory } from '@/libs/markdown'
 
@@ -11,7 +12,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params: { category } }: any) {
-  const title = getHeadingTextByCategory(category)
+  const title = `${categories[category]} に関する記事`
   return {
     title: `${title} | ${config.SITE_TITLE}`,
     description: config.SITE_DESCRIPTION,
@@ -25,17 +26,9 @@ export async function generateMetadata({ params: { category } }: any) {
   }
 }
 
-function getHeadingTextByCategory(category: string) {
-  let headingText = ''
-  if (category === 'tech') headingText = '技術 に関する記事'
-  if (category === 'travel') headingText = '旅行 に関する記事'
-  if (category === 'portfolio') headingText = 'ポートフォリオ'
-  return headingText
-}
-
 export default async function Blog({ params: { category } }: any) {
   const posts = await getPostsByCategory(category)
-  const headingText = getHeadingTextByCategory(category)
+  const headingText = `${categories[category]} に関する記事`
 
   return (
     <RootLayout>

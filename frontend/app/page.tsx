@@ -1,8 +1,8 @@
+import { RootLayout } from '@/components/Layout'
 import { PostList } from '@/components/PostList'
 import { Profile } from '@/components/Profile'
-import { RootLayout } from '@/components/Layout'
-import { getAllPosts } from '@/libs/markdown'
 import { config } from '@/data/siteConfig'
+import { getAllPosts } from '@/libs/markdown'
 
 export async function generateMetadata() {
   return {
@@ -24,7 +24,7 @@ export default async function Home() {
   return (
     <RootLayout>
       <div className="flex flex-wrap gap-base">
-        <PostList headingText="新着記事" perPage={1} posts={posts} />
+        <PostList headingText="新着記事" perPage={3} posts={posts} />
         <Profile />
       </div>
     </RootLayout>
