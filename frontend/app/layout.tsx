@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html>
-      <body>{children}</body>
+      <body className="relative">{children}</body>
     </html>
   )
   // appdirでページ遷移時のスクロール挙動が謎なので一旦別コンポーネントで対応

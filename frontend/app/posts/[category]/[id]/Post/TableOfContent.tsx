@@ -21,8 +21,8 @@ export function TableOfContent({ headings, toc }: Props) {
               data-depth={heading.depth}
               className={clsx(
                 'pt-2',
-                'data-[depth="3"]:ml-4 data-[depth="3"]:text-sm',
-                'data-[depth="4"]:ml-8 data-[depth="4"]:text-sm',
+                'data-[depth="3"]:ml-4 lg:data-[depth="3"]:text-sm',
+                'data-[depth="4"]:ml-8 lg:data-[depth="4"]:text-sm',
               )}
             >
               <Link

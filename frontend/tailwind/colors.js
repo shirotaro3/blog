@@ -14,5 +14,8 @@ module.exports = {
       80: '#ffffffcc',
       40: '#ffffff66',
     },
+    darkness: {
+      40: '#00000066',
+    },
   },
 }

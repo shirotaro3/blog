@@ -1,10 +1,12 @@
 'use client'
 
+import { useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 import { FadeInBox } from '@/components/FadeInBox'
 import { categories } from '@/data/categories'
-import { MenuContainer } from './MenuContainer'
-import { MenuLinks } from './MenuLinks'
+import { MenuLink } from './MenuLink'
+import { MenuLinkGroup } from './MenuLinkGroup'
 import { useHamburgerMenu } from './useHamburgerMenu'
 
 const categoryLinks = Object.keys(categories).map((category) => ({
@@ -13,20 +15,38 @@ const categoryLinks = Object.keys(categories).map((category) => ({
 }))
 
 export function HamburgerMenu() {
-  const [isOpen] = useHamburgerMenu()
+  const [isOpen, setIsOpen] = useHamburgerMenu()
+  const pathname = usePathname()
+
+  useEffect(() => {
+    setIsOpen(false)
+  }, [pathname])
+
   if (!isOpen) return null
   return (
-    <MenuContainer>
-      <FadeInBox className={clsx('w-1col-md')}>
-        <MenuLinks heading={'カテゴリー'} links={categoryLinks} />
+    <div
+      className={clsx(
+        'absolute md:fixed top-[var(--header)] bottom-auto base-container z-30',
+        'lg:left-5 lg:right-5',
+      )}
+    >
+      <FadeInBox variant="invert">
+        <div className={clsx('bg-brightness-80 flex flex-wrap border-x')}>
+          <MenuLinkGroup groupName="カテゴリから探す">
+            {categoryLinks.map(({ href, text }) => (
+              <MenuLink key={href} href={href}>
+                {text}
+              </MenuLink>
+            ))}
+          </MenuLinkGroup>
+          {/* <MenuLinkGroup groupName="タグから探す">
+            {categoryLinks.map(({ href, text }) => (
+              <MenuLink href={href}>{text}</MenuLink>
+            ))}
+          </MenuLinkGroup> */}
+        </div>
       </FadeInBox>
-      <FadeInBox className={clsx('w-1col-md')}>
-        <MenuLinks heading={'タグ'} links={[]} />
-      </FadeInBox>
-      <FadeInBox className={clsx('w-1col-md')}>
-        <MenuLinks heading={'その他'} links={[]} />
-      </FadeInBox>
-    </MenuContainer>
+    </div>
   )
 }
 

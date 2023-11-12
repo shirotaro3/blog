@@ -4,6 +4,7 @@ type Props = {
   src: string
   alt: string
   className?: string
+  priority?: boolean
 }
 
 // 静的ビルド時には画像最適化が行われないため、width, heightは適当
