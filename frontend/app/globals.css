@@ -55,7 +55,7 @@
   }
   /* markdown */
   .md-content {
-    @apply text-sm md:text-base;
+    @apply text-base;
   }
   .md-content h2 {
     @apply bg-grayscale-200 text-xl px-2 py-4 border-b border-grayscale-400 font-bold mb-6;

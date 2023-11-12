@@ -22,7 +22,7 @@ export function MenuContainer({ children }: Props) {
         ref={ref}
         className={clsx(
           inViewOuterClass,
-          'relative h-full w-full bg-brightness-80',
+          'relative h-full w-full bg-white',
           'after:absolute after:border-y after:top-0 after:bottom-0 after:border-grayscale-500 after:translate-x-[-50%] after:left-[50%] box-content',
           'before:absolute before:border-x before:left-0 before:right-0 before:border-grayscale-500 before:translate-y-[-50%] before:top-[50%] box-content',
         )}

@@ -19,13 +19,13 @@ module.exports = {
     },
     bgFadeIn: {
       '0%': {
-        backgroundColor: 'rgba(0, 0, 0, 0)',
+        backgroundColor: '#ffffff00',
       },
       '30%': {
-        backgroundColor: 'rgba(0, 0, 0, 0)',
+        backgroundColor: '#ffffff00',
       },
       '100%': {
-        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        backgroundColor: '#ffffffff',
       },
     },
     growWidth: {
