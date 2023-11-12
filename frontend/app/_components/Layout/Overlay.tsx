@@ -1,7 +1,7 @@
 'use client'
 
 import clsx from 'clsx'
-import { useHamburgerMenu } from '../HamburgerMenu/useHamburgerMenu'
+import { useHamburgerMenu } from '@/components/ui/NavigationMenu/hooks/useNavigationMenu'
 
 export function Overlay() {
   const [isOpen, setIsOpen] = useHamburgerMenu()

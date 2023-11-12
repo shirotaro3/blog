@@ -3,18 +3,18 @@
 import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
-import { FadeInBox } from '@/components/FadeInBox'
+import { FadeInBox } from '@/components/ui/FadeInBox'
 import { categories } from '@/data/categories'
 import { MenuLink } from './MenuLink'
 import { MenuLinkGroup } from './MenuLinkGroup'
-import { useHamburgerMenu } from './useHamburgerMenu'
+import { useHamburgerMenu } from './hooks/useNavigationMenu'
 
 const categoryLinks = Object.keys(categories).map((category) => ({
   href: `/posts/${category}`,
   text: categories[category],
 }))
 
-export function HamburgerMenu() {
+export function NavigationMenu() {
   const [isOpen, setIsOpen] = useHamburgerMenu()
   const pathname = usePathname()
 
@@ -50,4 +50,4 @@ export function HamburgerMenu() {
   )
 }
 
-export { useHamburgerMenu } from './useHamburgerMenu'
+export { useHamburgerMenu } from './hooks/useNavigationMenu'

@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import clsx from 'clsx'
 import type { Post } from '@types'
-import { FadeInBox } from '@/components/FadeInBox'
-import { Image } from '@/components/Image'
+import { FadeInBox } from '@/components/ui/FadeInBox'
+import { Image } from '@/components/ui/Image'
 import { categories } from '@/data/categories'
 
 type Props = {

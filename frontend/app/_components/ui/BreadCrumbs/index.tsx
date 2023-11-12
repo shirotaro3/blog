@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import clsx from 'clsx'
-import { useBreadCrumbs } from './useBreadCrumbs'
+import { useBreadCrumbs } from './hooks/useBreadCrumbs'
 
 export function BreadCrumbs() {
   const breadCrumbs = useBreadCrumbs()

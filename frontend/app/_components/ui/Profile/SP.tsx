@@ -1,10 +1,10 @@
 import clsx from 'clsx'
-import { FadeInBox } from '@/components/FadeInBox'
-import { Heading } from '@/components/Heading'
+import { FadeInBox } from '@/components/ui/FadeInBox'
+import { Heading } from '@/components/ui/Heading'
 import { AuthorImage } from './AuthorImage'
 import { Introduction } from './Introduction'
 
-export function ProfilePC() {
+export function ProfileSP() {
   return (
     <>
       <FadeInBox className={clsx('w-full')}>
@@ -12,8 +12,6 @@ export function ProfilePC() {
       </FadeInBox>
       <FadeInBox className={clsx('w-1col-md')}>
         <AuthorImage />
-      </FadeInBox>
-      <FadeInBox className={clsx('w-2col-md')}>
         <Introduction />
       </FadeInBox>
     </>

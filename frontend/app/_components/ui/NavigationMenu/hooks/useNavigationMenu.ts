@@ -2,8 +2,8 @@
 
 import { atom, useAtom } from 'jotai'
 
-const hamburgerMenuAtom = atom(false)
+const navigationMenuAtom = atom(false)
 
 export function useHamburgerMenu() {
-  return useAtom(hamburgerMenuAtom)
+  return useAtom(navigationMenuAtom)
 }

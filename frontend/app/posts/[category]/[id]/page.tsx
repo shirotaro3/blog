@@ -1,8 +1,8 @@
-import { RootLayout } from '@/components/Layout'
-import { Profile } from '@/components/Profile'
+import { RootLayout } from '@/components/layout'
+import { Profile } from '@/components/ui/Profile'
 import { config } from '@/data/siteConfig'
 import { getAllPosts, getPostByCategoryAndId } from '@/libs/markdown'
-import { Post } from './Post'
+import { Post } from './components/Post'
 
 export async function generateStaticParams() {
   const posts = await getAllPosts()

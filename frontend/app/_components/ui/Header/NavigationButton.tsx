@@ -1,7 +1,7 @@
 'use client'
 
 import clsx from 'clsx'
-import { useHamburgerMenu } from '@/components/HamburgerMenu'
+import { useHamburgerMenu } from '@/components/ui/NavigationMenu'
 
 export function NavigationButton() {
   const [, setIsOpen] = useHamburgerMenu()

@@ -1,6 +1,6 @@
-import { RootLayout } from '@/components/Layout'
-import { PostList } from '@/components/PostList'
-import { Profile } from '@/components/Profile'
+import { RootLayout } from '@/components/layout'
+import { PostList } from '@/components/ui/PostList'
+import { Profile } from '@/components/ui/Profile'
 import { config } from '@/data/siteConfig'
 import { getAllPosts } from '@/libs/markdown'
 

@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import type { Post } from '@types'
-import { FadeInBox } from '@/components/FadeInBox'
+import { FadeInBox } from '@/components/ui/FadeInBox'
 import { Content } from './Content'
 import { Cover } from './Cover'
 import { TableOfContent } from './TableOfContent'
