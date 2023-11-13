@@ -42,7 +42,7 @@ export function Cover({ post }: Props) {
               lgTextClass,
             )}
           >
-            <div className={clsx('mx-3 md:mx-5')}>{post.title}</div>
+            <h1 className={clsx('mx-3 md:mx-5')}>{post.title}</h1>
           </div>
         </div>
         <Image src={post.cover} className="w-full" alt="cover" />

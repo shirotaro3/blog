@@ -1,4 +1,4 @@
-import { RootLayout } from '@/components/layout'
+import { RootLayout } from '@/components/layout/RootLayout'
 import { Profile } from '@/components/ui/Profile'
 import { config } from '@/data/siteConfig'
 import { getAllPosts, getPostByCategoryAndId } from '@/libs/markdown'
@@ -32,10 +32,10 @@ export default async function Blog({
   const post = await getPostByCategoryAndId(category, id)
   return (
     <RootLayout>
-      <div className="flex flex-wrap gap-base">
+      <article className="flex flex-wrap gap-base">
         <Post post={post} />
         <Profile />
-      </div>
+      </article>
     </RootLayout>
   )
 }

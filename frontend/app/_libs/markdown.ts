@@ -94,19 +94,29 @@ export async function getPostByCategoryAndId(category: string, id: string) {
 
 export async function getPostsByCategory(category: string) {
   const path = join(process.cwd(), 'app', '_data', 'posts', category)
-  const posts = await Promise.all(
-    fs.readdirSync(path).map((id) => getPostByCategoryAndId(category, id)),
-  )
-  return posts.sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+  try {
+    const posts = await Promise.all(
+      fs.readdirSync(path).map((id) => getPostByCategoryAndId(category, id)),
+    )
+    return posts.sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+  } catch (error) {
+    console.warn(error)
+    return []
+  }
 }
 
 export async function getAllPosts() {
   const path = join(process.cwd(), 'app', '_data', 'posts')
-  const posts = await Promise.all(
-    fs.readdirSync(path).flatMap((category) => {
-      const ids = fs.readdirSync(join(process.cwd(), 'app', '_data', 'posts', category))
-      return ids.map((id) => getPostByCategoryAndId(category, id))
-    }),
-  )
-  return posts.sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+  try {
+    const posts = await Promise.all(
+      fs.readdirSync(path).flatMap((category) => {
+        const ids = fs.readdirSync(join(process.cwd(), 'app', '_data', 'posts', category))
+        return ids.map((id) => getPostByCategoryAndId(category, id))
+      }),
+    )
+    return posts.sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+  } catch (error) {
+    console.warn(error)
+    return []
+  }
 }

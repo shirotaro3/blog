@@ -13,7 +13,7 @@ export function TableOfContent({ headings, toc }: Props) {
   return (
     <div className="box-white lg:h-full">
       <div className="border p-4 lg:border-0 border-grayscale-400 lg:p-0">
-        <h3 className="font-bold text-lg p-2 mb-2 border-b border-grayscale-400">目次</h3>
+        <div className="font-bold text-lg p-2 mb-2 border-b border-grayscale-400">目次</div>
         <ol className="px-2">
           {headings.map((heading, i) => (
             <li
@@ -21,6 +21,7 @@ export function TableOfContent({ headings, toc }: Props) {
               data-depth={heading.depth}
               className={clsx(
                 'pt-2',
+                'data-[depth="2"]:text-lg lg:data-[depth="2"]:text-base',
                 'data-[depth="3"]:ml-4 lg:data-[depth="3"]:text-sm',
                 'data-[depth="4"]:ml-8 lg:data-[depth="4"]:text-sm',
               )}

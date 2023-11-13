@@ -1,14 +1,12 @@
-import { RootLayout } from '@/components/layout'
+import { RootLayout } from '@/components/layout/RootLayout'
 import { PostList } from '@/components/ui/PostList'
 import { Profile } from '@/components/ui/Profile'
 import { categories } from '@/data/categories'
 import { config } from '@/data/siteConfig'
-import { getAllPosts, getPostsByCategory } from '@/libs/markdown'
+import { getPostsByCategory } from '@/libs/markdown'
 
 export async function generateStaticParams() {
-  const posts = await getAllPosts()
-  const categories = Array.from(new Set(posts.map((post) => post.category)))
-  return categories.map((category) => ({ category }))
+  return Object.keys(categories).map((category) => ({ category }))
 }
 
 export async function generateMetadata({ params: { category } }: any) {

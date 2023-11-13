@@ -20,6 +20,11 @@ export function PostList({ headingText, posts, perPage = config.POST_PER_PAGE }:
   const { replace } = useRouter()
   const pathname = usePathname()
   const search = useSearchParams()
+
+  // HeadingLevel ホーム以外ならh1にする
+  const headingLevel = pathname === '/' ? 2 : 1
+
+  // Pagination 一旦簡素な実装 記事が増えてきたら考える
   const currentPage = search.get('page') ? Number(search.get('page')) : 1
   const [page, setPage] = useState(currentPage)
   const sliced = posts.slice(0, perPage * page)
@@ -39,7 +44,7 @@ export function PostList({ headingText, posts, perPage = config.POST_PER_PAGE }:
   return (
     <>
       <FadeInBox className={clsx('w-full')}>
-        <Heading level={2}>{headingText}</Heading>
+        <Heading level={headingLevel}>{headingText}</Heading>
       </FadeInBox>
       <ul className={clsx('w-full flex flex-wrap gap-base')}>
         {sliced.length > 0 ? (

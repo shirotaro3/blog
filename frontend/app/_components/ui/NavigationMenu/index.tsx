@@ -31,7 +31,7 @@ export function NavigationMenu() {
       )}
     >
       <FadeInBox variant="invert">
-        <div className={clsx('bg-brightness-80 flex flex-wrap border-x')}>
+        <nav className={clsx('bg-brightness-80 flex flex-wrap border-x')}>
           <MenuLinkGroup groupName="カテゴリから探す">
             {categoryLinks.map(({ href, text }) => (
               <MenuLink key={href} href={href}>
@@ -44,7 +44,7 @@ export function NavigationMenu() {
               <MenuLink href={href}>{text}</MenuLink>
             ))}
           </MenuLinkGroup> */}
-        </div>
+        </nav>
       </FadeInBox>
     </div>
   )

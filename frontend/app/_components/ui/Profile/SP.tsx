@@ -8,7 +8,7 @@ export function ProfileSP() {
   return (
     <>
       <FadeInBox className={clsx('w-full')}>
-        <Heading level={3}>著者について</Heading>
+        <Heading level={2}>著者について</Heading>
       </FadeInBox>
       <FadeInBox className={clsx('w-1col-md')}>
         <AuthorImage />

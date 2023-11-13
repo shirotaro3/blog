@@ -7,7 +7,7 @@ import { useInView } from 'react-intersection-observer'
 type Props = ComponentProps<'div'> & { variant?: 'normal' | 'invert' }
 
 const variants = {
-  normal: 'after:border-grayscale-500 before:border-grayscale-500',
+  normal: 'after:border-black before:border-black',
   invert: 'after:border-white before:border-white',
 }
 

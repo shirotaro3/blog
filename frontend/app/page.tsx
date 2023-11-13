@@ -1,4 +1,4 @@
-import { RootLayout } from '@/components/layout'
+import { RootLayout } from '@/components/layout/RootLayout'
 import { PostList } from '@/components/ui/PostList'
 import { Profile } from '@/components/ui/Profile'
 import { config } from '@/data/siteConfig'
