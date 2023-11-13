@@ -9,19 +9,19 @@ type Props = {
   post: Post
 }
 export function PostPC({ post }: Props) {
-  const coverClass = post.toc ? 'w-2col-md' : 'w-full'
+  const coverClass = post.useToc ? 'w-2col-md' : 'w-full'
   return (
     <>
       <FadeInBox className={clsx(coverClass)}>
         <Cover post={post} />
       </FadeInBox>
-      {post.toc && (
+      {post.useToc && (
         <FadeInBox className={clsx('w-1col-md')}>
-          <TableOfContent document={post.document} />
+          <TableOfContent reactNode={post.toc} />
         </FadeInBox>
       )}
       <FadeInBox className={clsx('w-full')}>
-        <Content document={post.document} />
+        <Content reactNode={post.content} />
       </FadeInBox>
     </>
   )

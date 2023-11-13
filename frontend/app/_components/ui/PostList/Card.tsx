@@ -11,8 +11,6 @@ type Props = {
   post: Post
 }
 
-const DEFAULT_COVER_PATH = '/post/travel/hokkaido1/clark.webp'
-
 export function Card({ post }: Props) {
   const pathname = usePathname()
   const headingLevel = pathname === '/' ? 3 : 2
@@ -38,7 +36,7 @@ export function Card({ post }: Props) {
                 </div>
               </div>
               <Image
-                src={post.cover || DEFAULT_COVER_PATH}
+                src={`${post.cover}?q=50`}
                 className={clsx('w-full md:h-[200px]')}
                 alt="cover image"
                 priority={true}

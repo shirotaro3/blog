@@ -1,6 +1,8 @@
 import '@contentful/rich-text-types'
-import { createClient, EntrySkeletonType, Entry } from 'contentful'
+import { createClient } from 'contentful'
 import { Post } from '@types'
+import { documentToContent } from './documentToContent'
+import { documentToTableOfContent } from './documentToTableOfContent'
 
 function buildClient() {
   const client = createClient({
@@ -17,11 +19,12 @@ function formatPost(post: any) {
     title: post.fields.title,
     category: post.fields.category,
     description: post.fields.description,
-    document: post.fields.content,
+    content: documentToContent(post.fields.content),
+    toc: documentToTableOfContent(post.fields.content),
     cover: post.fields.cover?.fields.file.url,
     date: post.fields.date,
     lastUpdated: post.fields.lastUpdated,
-    toc: post.fields.toc,
+    useToc: post.fields.useToc,
   }
 }
 

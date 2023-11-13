@@ -12,8 +12,8 @@ export function PostSP({ post }: Props) {
   return (
     <FadeInBox className={clsx('w-full')}>
       <Cover post={post} />
-      {post.toc && <TableOfContent document={post.document} />}
-      <Content document={post.document} />
+      {post.useToc && <TableOfContent reactNode={post.toc} />}
+      <Content reactNode={post.content} />
     </FadeInBox>
   )
 }

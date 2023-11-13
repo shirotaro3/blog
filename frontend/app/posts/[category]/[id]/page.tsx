@@ -14,10 +14,10 @@ export async function generateMetadata({ params: { category, id } }: any) {
   return {
     title: `${post.title} | ${config.SITE_TITLE}`,
     description: post.description,
-    image: `${config.SITE_URL}/${post.cover}`,
+    image: `${config.SITE_URL}/${post.cover}?w=1200&h=630&fit=pad&bg=rgb:ffffff`,
     'og:title': post.title,
     'og:description': post.description,
-    'og:image': `${config.SITE_URL}/${post.cover}`,
+    'og:image': `${config.SITE_URL}/${post.cover}?w=1200&h=630&fit=pad&bg=rgb:ffffff`,
     'og:url': `${config.SITE_URL}/posts/${category}/${id}`,
     'og:site_name': config.SITE_TITLE,
     'twitter:card': 'summary_large_image',

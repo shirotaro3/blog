@@ -30,7 +30,7 @@ function Meta({ post }: Props) {
 }
 
 export function Cover({ post }: Props) {
-  const lgTextClass = post.toc ? 'lg:text-3xl' : 'lg:text-4xl'
+  const lgTextClass = post.useToc ? 'lg:text-3xl' : 'lg:text-4xl'
   return (
     <div className={clsx('lg:h-full', 'bg-brightness-80')}>
       <div className="relative">
@@ -45,7 +45,7 @@ export function Cover({ post }: Props) {
             <h1 className={clsx('mx-3 md:mx-5')}>{post.title}</h1>
           </div>
         </div>
-        <Image src={post.cover} className="w-full" alt="cover" />
+        <Image src={`${post.cover}?q=50`} className="w-full" alt="cover" />
       </div>
       <Meta post={post} />
     </div>

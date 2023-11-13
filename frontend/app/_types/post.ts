@@ -1,5 +1,3 @@
-import { Document } from '@contentful/rich-text-types'
-
 export type Post = {
   id: string
   title: string
@@ -8,6 +6,7 @@ export type Post = {
   cover: string
   date: string
   lastUpdated: string
-  toc: boolean
-  document: Document
+  useToc: boolean
+  content: React.ReactNode
+  toc: React.ReactNode
 }
