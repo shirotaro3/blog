@@ -30,11 +30,11 @@ module.exports = {
     },
     growWidth: {
       '0%': {
-        width: 0,
+        transform: 'scaleX(0)',
         opacity: 1,
       },
       '30%': {
-        width: '100%',
+        transform: 'scaleX(1)',
         opacity: 0.7,
       },
       '100%': {
@@ -43,11 +43,11 @@ module.exports = {
     },
     growHeight: {
       '0%': {
-        height: 0,
+        transform: 'scaleY(0)',
         opacity: 1,
       },
       '30%': {
-        height: '100%',
+        transform: 'scaleY(1)',
         opacity: 0.7,
       },
       '100%': {
