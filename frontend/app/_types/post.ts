@@ -1,4 +1,13 @@
-import { getPostByCategoryAndId } from '@/libs/markdown'
+import { Document } from '@contentful/rich-text-types'
 
-type PromiseType<T extends Promise<any>> = T extends Promise<infer P> ? P : never
-export type Post = PromiseType<ReturnType<typeof getPostByCategoryAndId>>
+export type Post = {
+  id: string
+  title: string
+  description: string
+  category: string
+  cover: string
+  date: string
+  lastUpdated: string
+  toc: boolean
+  document: Document
+}

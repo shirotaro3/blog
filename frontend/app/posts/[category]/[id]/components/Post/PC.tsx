@@ -17,11 +17,11 @@ export function PostPC({ post }: Props) {
       </FadeInBox>
       {post.toc && (
         <FadeInBox className={clsx('w-1col-md')}>
-          <TableOfContent headings={post.headings} toc={post.toc} />
+          <TableOfContent document={post.document} />
         </FadeInBox>
       )}
       <FadeInBox className={clsx('w-full')}>
-        <Content post={post} />
+        <Content document={post.document} />
       </FadeInBox>
     </>
   )

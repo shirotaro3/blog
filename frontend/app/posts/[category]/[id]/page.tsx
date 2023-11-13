@@ -1,7 +1,7 @@
 import { RootLayout } from '@/components/layout/RootLayout'
 import { Profile } from '@/components/ui/Profile'
 import { config } from '@/data/siteConfig'
-import { getAllPosts, getPostByCategoryAndId } from '@/libs/markdown'
+import { getAllPosts, getPostById } from '@/libs/contentful'
 import { Post } from './components/Post'
 
 export async function generateStaticParams() {
@@ -10,7 +10,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params: { category, id } }: any) {
-  const post = await getPostByCategoryAndId(category, id)
+  const post = await getPostById(id)
   return {
     title: `${post.title} | ${config.SITE_TITLE}`,
     description: post.description,
@@ -29,7 +29,7 @@ export default async function Blog({
 }: {
   params: { category: string; id: string }
 }) {
-  const post = await getPostByCategoryAndId(category, id)
+  const post = await getPostById(id)
   return (
     <RootLayout>
       <article className="flex flex-wrap gap-base">

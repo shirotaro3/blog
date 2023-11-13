@@ -3,7 +3,7 @@ import { PostList } from '@/components/ui/PostList'
 import { Profile } from '@/components/ui/Profile'
 import { categories } from '@/data/categories'
 import { config } from '@/data/siteConfig'
-import { getPostsByCategory } from '@/libs/markdown'
+import { getPostsByCategory } from '@/libs/contentful'
 
 export async function generateStaticParams() {
   return Object.keys(categories).map((category) => ({ category }))

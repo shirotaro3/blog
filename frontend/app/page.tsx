@@ -2,7 +2,7 @@ import { RootLayout } from '@/components/layout/RootLayout'
 import { PostList } from '@/components/ui/PostList'
 import { Profile } from '@/components/ui/Profile'
 import { config } from '@/data/siteConfig'
-import { getAllPosts } from '@/libs/markdown'
+import { getAllPosts } from '@/libs/contentful'
 
 export async function generateMetadata() {
   return {

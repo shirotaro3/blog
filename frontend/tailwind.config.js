@@ -15,8 +15,8 @@ module.exports = {
       ...animations,
     },
     backgroundImage: {
-      building: `url('${process.env.NEXT_PUBLIC_BASE_PATH}/img/bg.webp')`,
-      silhouette: `url('${process.env.NEXT_PUBLIC_BASE_PATH}/img/siru.webp')`,
+      building: `url('/img/bg.webp')`,
+      silhouette: `url('/img/siru.webp')`,
     },
   },
   plugins: [],

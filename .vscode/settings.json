@@ -18,6 +18,7 @@
     "superjson",
     "rehype",
     "shiki",
-    "clsx"
+    "clsx",
+    "contentful"
   ]
 }
