@@ -3,6 +3,9 @@ import { config } from '@/data/siteConfig'
 import './globals.css'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NODE_ENV === 'production' ? config.SITE_URL : 'http://localhost:3000',
+  ),
   title: config.SITE_TITLE,
   description: config.SITE_DESCRIPTION,
   robots: 'noindex',

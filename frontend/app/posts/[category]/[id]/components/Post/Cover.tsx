@@ -45,7 +45,14 @@ export function Cover({ post }: Props) {
             <h1 className={clsx('mx-3 md:mx-5')}>{post.title}</h1>
           </div>
         </div>
-        <Image src={`${post.cover}?q=50`} className="w-full" alt="cover" width={100} height={100} />
+        <Image
+          src={`${post.cover}?q=30`}
+          className="w-full"
+          alt="cover"
+          width={100}
+          height={100}
+          priority={true}
+        />
       </div>
       <Meta post={post} />
     </div>

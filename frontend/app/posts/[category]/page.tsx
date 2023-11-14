@@ -14,13 +14,19 @@ export async function generateMetadata({ params: { category } }: any) {
   return {
     title: `${title} | ${config.SITE_TITLE}`,
     description: config.SITE_DESCRIPTION,
-    // image: `${config.SITE_URL}/${post.cover}`,
-    'og:title': title,
-    'og:description': config.SITE_DESCRIPTION,
-    // 'og:image': `${config.SITE_URL}/${post.cover}`,
-    'og:url': `${config.SITE_URL}/posts/${category}`,
-    'og:site_name': config.SITE_TITLE,
-    'twitter:card': 'summary_large_image',
+    openGraph: {
+      title,
+      // image: `${config.SITE_URL}/${post.cover}`,
+      description: config.SITE_DESCRIPTION,
+      url: `${config.SITE_URL}/posts/${category}`,
+      site_name: config.SITE_TITLE,
+    },
+    icons: {
+      other: {
+        rel: 'preconnect',
+        url: 'https://images.ctfassets.net',
+      },
+    },
   }
 }
 
