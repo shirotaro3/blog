@@ -7,6 +7,7 @@ const crypto = require('crypto')
 
 const headingTypes = [BLOCKS.HEADING_2, BLOCKS.HEADING_3]
 
+// TODO: 型定義を調べる
 const options = {
   renderNode: {
     [BLOCKS.HEADING_2]: (node: any, children: any) => {

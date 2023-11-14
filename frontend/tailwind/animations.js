@@ -2,8 +2,8 @@ module.exports = {
   animation: {
     fadeIn: 'fadeIn 0.7s ease',
     bgFadeIn: 'bgFadeIn 0.7s ease',
-    growWidth: 'growWidth 0.9s ease',
-    growHeight: 'growHeight 0.9s ease',
+    scaleX: 'scaleX 0.9s ease',
+    scaleY: 'scaleY 0.9s ease',
   },
   keyframes: {
     fadeIn: {
@@ -28,7 +28,7 @@ module.exports = {
         backgroundColor: '#ffffffff',
       },
     },
-    growWidth: {
+    scaleX: {
       '0%': {
         transform: 'scaleX(0)',
         opacity: 1,
@@ -41,7 +41,7 @@ module.exports = {
         opacity: 0,
       },
     },
-    growHeight: {
+    scaleY: {
       '0%': {
         transform: 'scaleY(0)',
         opacity: 1,

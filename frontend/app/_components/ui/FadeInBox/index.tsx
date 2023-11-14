@@ -13,7 +13,7 @@ const variants = {
 
 export function FadeInBox({ children, className, variant = 'normal' }: Props) {
   const { ref, inView } = useInView({ triggerOnce: true })
-  const inViewOuterClass = inView && 'after:animate-growWidth before:animate-growHeight'
+  const inViewOuterClass = inView && 'after:animate-scaleX before:animate-scaleY'
   const inViewInnerClass = inView ? 'animate-fadeIn' : 'opacity-0'
   const variantClass = variants[variant]
 
