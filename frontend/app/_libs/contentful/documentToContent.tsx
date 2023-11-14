@@ -32,7 +32,7 @@ const options = {
             )}
           >
             <Image
-              src={node.data.target.fields.file.url + `?q=70`}
+              src={node.data.target.fields.file.url + `?q=50`}
               alt={node.data.target.fields.title}
               width={width}
               height={

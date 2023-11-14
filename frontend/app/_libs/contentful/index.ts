@@ -21,7 +21,11 @@ function formatPost(post: any) {
     description: post.fields.description,
     content: documentToContent(post.fields.content),
     toc: documentToTableOfContent(post.fields.content),
-    cover: post.fields.cover?.fields.file.url,
+    cover: {
+      url: post.fields.cover.fields.file.url,
+      width: post.fields.cover.fields.file.details.image.width,
+      height: post.fields.cover.fields.file.details.image.height,
+    },
     date: post.fields.date,
     lastUpdated: post.fields.lastUpdated,
     useToc: post.fields.useToc,

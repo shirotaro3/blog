@@ -8,6 +8,9 @@ type Props = {
   post: Post
 }
 
+// カバー画像の最大幅
+const POST_COVER_WIDTH = 800
+
 function Meta({ post }: Props) {
   return (
     <ul
@@ -30,7 +33,9 @@ function Meta({ post }: Props) {
 }
 
 export function Cover({ post }: Props) {
-  const lgTextClass = post.useToc ? 'lg:text-3xl' : 'lg:text-4xl'
+  // 画像サイズを最適化する
+  const coverWidth = post.cover.width > POST_COVER_WIDTH ? POST_COVER_WIDTH : post.cover.width
+  const coverHeight = post.cover.height * (coverWidth / post.cover.width)
   return (
     <div className={clsx('lg:h-full', 'bg-brightness-80')}>
       <div className="relative">
@@ -39,18 +44,18 @@ export function Cover({ post }: Props) {
             className={clsx(
               'flex justify-center items-center text-center p-3 bg-black bg-opacity-20 text-white font-bold text-2xl w-full',
               'md:text-3xl',
-              lgTextClass,
+              post.useToc ? 'lg:text-3xl' : 'lg:text-4xl',
             )}
           >
             <h1 className={clsx('mx-3 md:mx-5')}>{post.title}</h1>
           </div>
         </div>
         <Image
-          src={`${post.cover}?q=30`}
+          src={`${post.cover.url}?q=30&w=${coverWidth}&h=${coverHeight}`}
           className="w-full"
           alt="cover"
-          width={100}
-          height={100}
+          width={coverWidth}
+          height={coverHeight}
           priority={true}
         />
       </div>

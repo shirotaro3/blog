@@ -11,9 +11,15 @@ type Props = {
   post: Post
 }
 
+// カバー画像の最大幅
+const POST_COVER_WIDTH = 740
+
 export function Card({ post }: Props) {
   const pathname = usePathname()
   const headingLevel = pathname === '/' ? 3 : 2
+  // 画像サイズを最適化する
+  const coverWidth = post.cover.width > POST_COVER_WIDTH ? POST_COVER_WIDTH : post.cover.width
+  const coverHeight = post.cover.height * (coverWidth / post.cover.width)
   return (
     <li className={clsx('w-1col')}>
       <FadeInBox>
@@ -24,8 +30,8 @@ export function Card({ post }: Props) {
             'lg:[&:hover_.card-cover]:scale-110 lg:opacity-90 lg:hover:border-grayscale-400 lg:hover:opacity-100',
           )}
         >
-          <div className={clsx('overflow-hidden', 'md:h-[200px]')}>
-            <div className={clsx('card-cover duration-300 relative')}>
+          <div className={clsx('overflow-hidden relative')}>
+            <div className={clsx('card-cover duration-300', 'md:h-[190px]')}>
               <div className={clsx('absolute flex justify-center items-center w-full h-full')}>
                 <div
                   className={clsx(
@@ -36,12 +42,12 @@ export function Card({ post }: Props) {
                 </div>
               </div>
               <Image
-                src={`${post.cover}?q=50`}
-                className={clsx('w-full md:h-[200px]')}
+                src={`${post.cover.url}?q=20&w=${coverWidth}&h=${coverHeight}`}
+                className={clsx('w-full object-cover')}
                 alt="cover image"
                 priority={true}
-                width={400}
-                height={363}
+                width={coverWidth}
+                height={coverHeight}
               />
             </div>
           </div>

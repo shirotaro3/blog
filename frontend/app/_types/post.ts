@@ -3,7 +3,11 @@ export type Post = {
   title: string
   description: string
   category: string
-  cover: string
+  cover: {
+    url: string
+    width: number
+    height: number
+  }
   date: string
   lastUpdated: string
   useToc: boolean
