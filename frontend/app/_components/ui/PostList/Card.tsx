@@ -1,10 +1,10 @@
 import { createElement } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 import type { Post } from '@types'
 import { FadeInBox } from '@/components/ui/FadeInBox'
-import { Image } from '@/components/ui/Image'
 import { categories } from '@/data/categories'
 
 type Props = {
@@ -40,6 +40,8 @@ export function Card({ post }: Props) {
                 className={clsx('w-full md:h-[200px]')}
                 alt="cover image"
                 priority={true}
+                width={400}
+                height={363}
               />
             </div>
           </div>

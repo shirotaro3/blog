@@ -1,5 +1,6 @@
+// import { Image } from '@/components/ui/Image'
+import Image from 'next/image'
 import clsx from 'clsx'
-import { Image } from '@/components/ui/Image'
 
 export function AuthorImage() {
   return (
@@ -9,6 +10,9 @@ export function AuthorImage() {
           src="/img/kawauso.webp"
           className={clsx('block m-auto w-[200px] lg:w-full')}
           alt="profile image"
+          priority={true}
+          width={400}
+          height={363}
         />
       </div>
     </div>

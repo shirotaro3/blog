@@ -1,7 +1,6 @@
 module.exports = {
   animation: {
     fadeIn: 'fadeIn 0.7s ease',
-    bgFadeIn: 'bgFadeIn 0.7s ease',
     scaleX: 'scaleX 0.9s ease',
     scaleY: 'scaleY 0.9s ease',
   },
@@ -15,17 +14,6 @@ module.exports = {
       },
       '100%': {
         opacity: 1,
-      },
-    },
-    bgFadeIn: {
-      '0%': {
-        backgroundColor: '#ffffff00',
-      },
-      '30%': {
-        backgroundColor: '#ffffff00',
-      },
-      '100%': {
-        backgroundColor: '#ffffffff',
       },
     },
     scaleX: {

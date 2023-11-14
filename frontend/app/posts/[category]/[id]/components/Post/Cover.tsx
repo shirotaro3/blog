@@ -1,7 +1,7 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
 import type { Post } from '@types'
-import { Image } from '@/components/ui/Image'
 import { categories } from '@/data/categories'
 
 type Props = {
@@ -45,7 +45,7 @@ export function Cover({ post }: Props) {
             <h1 className={clsx('mx-3 md:mx-5')}>{post.title}</h1>
           </div>
         </div>
-        <Image src={`${post.cover}?q=50`} className="w-full" alt="cover" />
+        <Image src={`${post.cover}?q=50`} className="w-full" alt="cover" width={100} height={100} />
       </div>
       <Meta post={post} />
     </div>

@@ -10,15 +10,5 @@
     "strings": true
   },
   "typescript.referencesCodeLens.enabled": true,
-  "cSpell.words": [
-    "nextjs",
-    "consts",
-    "dompurify",
-    "tailwindcss",
-    "superjson",
-    "rehype",
-    "shiki",
-    "clsx",
-    "contentful"
-  ]
+  "cSpell.words": ["nextjs", "consts", "tailwindcss", "superjson", "clsx", "contentful", "INLINES"]
 }
