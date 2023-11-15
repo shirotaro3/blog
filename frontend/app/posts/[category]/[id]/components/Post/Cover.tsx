@@ -51,7 +51,7 @@ export function Cover({ post }: Props) {
           </div>
         </div>
         <Image
-          src={`${post.cover.url}?q=30&w=${coverWidth}&h=${coverHeight}`}
+          src={`${post.cover.url}?q=30&w=${coverWidth}&h=${coverHeight}&fm=webp`}
           className="w-full"
           alt="cover"
           width={coverWidth}

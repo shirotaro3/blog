@@ -58,21 +58,17 @@
     @apply text-base;
   }
   .md-content h2 {
-    @apply bg-grayscale-200 text-xl px-2 py-4 border-b border-grayscale-400 font-bold mb-6;
+    @apply text-xl px-2 py-3 border-b border-l-4 border-grayscale-400 font-bold mt-14;
   }
   .md-content h3 {
-    @apply text-lg px-2 pb-2 pt-1 border-b border-grayscale-400 font-bold mb-6;
+    @apply text-lg px-2 pb-2 pt-1 border-b border-grayscale-400 font-bold mt-8;
   }
   .md-content h2 a,
-  .md-content h3 a,
-  .md-content h4 a {
+  .md-content h3 a {
     @apply text-current hover:underline no-underline text-xs inline-block pr-1;
   }
-  .md-content h4 {
-    @apply font-bold text-base pb-1 px-1 my-6 border-b border-grayscale-400;
-  }
   .md-content p {
-    @apply mb-6;
+    @apply mt-6;
   }
   .md-content pre {
     @apply mb-2 p-4;
@@ -84,7 +80,7 @@
     @apply underline lg:hover:no-underline;
   }
   .md-content hr {
-    @apply mb-6 border-grayscale-400;
+    @apply my-10 border-grayscale-400;
   }
   /* others */
   .lg-only-border-b {
@@ -112,5 +108,5 @@
 :root {
   --header: 80px;
   --footer: 120px;
-  @apply md:scroll-p-[var(--header)];
+  @apply md:scroll-p-[var(--header)] text-grayscale-800;
 }

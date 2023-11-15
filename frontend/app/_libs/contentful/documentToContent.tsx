@@ -6,7 +6,7 @@ import clsx from 'clsx'
 
 const crypto = require('crypto')
 
-const MAX_IMAGE_WIDTH = 500
+const MAX_IMAGE_WIDTH = 600
 
 // TODO: 型定義を調べる
 const options = {
@@ -24,21 +24,19 @@ const options = {
     [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
       const originalWidth = node.data.target.fields.file.details.image.width
       const width = originalWidth > MAX_IMAGE_WIDTH ? MAX_IMAGE_WIDTH : originalWidth
+      const height = node.data.target.fields.file.details.image.width
       return (
-        <div>
+        <div className="mt-6">
           <figure
             className={clsx(
-              'border px-2 pt-2 inline-block border-grayscale-400 mb-6 max-w-[calc(600px+1rem)]',
+              'border px-2 pt-2 inline-block border-grayscale-400 max-w-[calc(600px+1rem)]',
             )}
           >
             <Image
-              src={node.data.target.fields.file.url + `?q=50`}
+              src={node.data.target.fields.file.url + `?q=50&w=${width}&h=${height}&fm=webp`}
               alt={node.data.target.fields.title}
               width={width}
-              height={
-                node.data.target.fields.file.details.image.height *
-                (width / node.data.target.fields.file.details.image.width)
-              }
+              height={node.data.target.fields.file.details.image.height * (width / height)}
             />
             <figcaption className={clsx('p-2')}>{node.data.target.fields.title}</figcaption>
           </figure>

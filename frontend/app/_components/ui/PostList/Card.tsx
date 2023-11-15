@@ -42,7 +42,7 @@ export function Card({ post }: Props) {
                 </div>
               </div>
               <Image
-                src={`${post.cover.url}?q=20&w=${coverWidth}&h=${coverHeight}`}
+                src={`${post.cover.url}?q=20&w=${coverWidth}&h=${coverHeight}&fm=webp`}
                 className={clsx('w-full object-cover')}
                 alt="cover image"
                 priority={true}
