@@ -1,8 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 
-const colors = require('./tailwind/colors')
-const animations = require('./tailwind/animations')
-
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -11,13 +8,13 @@ module.exports = {
   ],
   theme: {
     extend: {
-      ...colors,
-      ...animations,
+      ...require('./tailwind/colors'),
+      ...require('./tailwind/animations'),
     },
     backgroundImage: {
       building: `url('/img/bg.webp')`,
       silhouette: `url('/img/siru.webp')`,
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-content-visibility')],
 }

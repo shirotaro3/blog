@@ -1,15 +1,11 @@
 import clsx from 'clsx'
 import { BreadCrumbs } from '@/components/ui/BreadCrumbs'
-import { Footer } from '@/components/ui/Footer'
 import { Header } from '@/components/ui/Header'
-import { NavigationMenu } from '@/components/ui/NavigationMenu'
-import { Overlay } from './Overlay'
 
+// スクロールの謎挙動対策
 export function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <NavigationMenu />
-      <Overlay />
       <Header />
       <div
         className={clsx(
@@ -23,7 +19,6 @@ export function RootLayout({ children }: { children: React.ReactNode }) {
           </nav>
           {children}
         </main>
-        <Footer />
       </div>
     </>
   )

@@ -24,6 +24,7 @@
     "@testing-library/jest-dom": "^6.1.4",
     "@testing-library/react": "^14.1.0",
     "@testing-library/user-event": "^14.5.1",
+    "@types/gtag.js": "^0.0.18",
     "@types/node": "20.2.5",
     "@types/react": "18.2.7",
     "@types/react-dom": "18.2.4",
@@ -36,6 +37,7 @@
     "postcss": "8.4.23",
     "serve": "^14.2.1",
     "tailwindcss": "3.3.2",
+    "tailwindcss-content-visibility": "^0.1.0",
     "typescript": "5.0.4",
     "vite": "^4.5.0",
     "vitest": "^0.34.6"
