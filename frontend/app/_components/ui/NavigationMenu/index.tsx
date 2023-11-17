@@ -3,7 +3,7 @@
 import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
-import { FadeInBox } from '@/components/ui/FadeInBox'
+import { FadeInObserver } from '@/components/ui/FadeInObserver'
 import { categories } from '@/data/categories'
 import { MenuLink } from './MenuLink'
 import { MenuLinkGroup } from './MenuLinkGroup'
@@ -30,7 +30,7 @@ export function NavigationMenu() {
         'lg:left-5 lg:right-5',
       )}
     >
-      <FadeInBox variant="invert">
+      <FadeInObserver variant="invert">
         <nav className={clsx('bg-brightness-80 flex flex-wrap border-x')}>
           <MenuLinkGroup groupName="カテゴリから探す">
             {categoryLinks.map(({ href, text }) => (
@@ -45,7 +45,7 @@ export function NavigationMenu() {
             ))}
           </MenuLinkGroup> */}
         </nav>
-      </FadeInBox>
+      </FadeInObserver>
     </div>
   )
 }

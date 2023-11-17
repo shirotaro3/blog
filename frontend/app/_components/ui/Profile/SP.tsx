@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { FadeInBox } from '@/components/ui/FadeInBox'
+import { FadeInObserver } from '@/components/ui/FadeInObserver'
 import { Heading } from '@/components/ui/Heading'
 import { AuthorImage } from './AuthorImage'
 import { Introduction } from './Introduction'
@@ -7,13 +7,13 @@ import { Introduction } from './Introduction'
 export function ProfileSP() {
   return (
     <>
-      <FadeInBox className={clsx('w-full')}>
+      <FadeInObserver className={clsx('w-full')}>
         <Heading level={2}>著者について</Heading>
-      </FadeInBox>
-      <FadeInBox className={clsx('w-1col-md')}>
+      </FadeInObserver>
+      <FadeInObserver className={clsx('w-1col-md')}>
         <AuthorImage />
         <Introduction />
-      </FadeInBox>
+      </FadeInObserver>
     </>
   )
 }

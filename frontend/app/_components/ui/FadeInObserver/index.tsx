@@ -11,7 +11,7 @@ const variants = {
   invert: 'after:border-white before:border-white',
 }
 
-export function FadeInBox({ children, className, variant = 'normal' }: Props) {
+export function FadeInObserver({ children, className, variant = 'normal' }: Props) {
   const { ref, inView } = useInView({ triggerOnce: true })
   const inViewOuterClass = inView
     ? 'after:animate-scaleX before:animate-scaleY'

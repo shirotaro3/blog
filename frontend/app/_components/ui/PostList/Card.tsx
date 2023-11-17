@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 import type { Post } from '@types'
-import { FadeInBox } from '@/components/ui/FadeInBox'
+import { FadeInObserver } from '@/components/ui/FadeInObserver'
 import { categories } from '@/data/categories'
 
 type Props = {
@@ -22,7 +22,7 @@ export function Card({ post }: Props) {
   const coverHeight = post.cover.height * (coverWidth / post.cover.width)
   return (
     <li className={clsx('w-1col')}>
-      <FadeInBox>
+      <FadeInObserver>
         <Link
           href={`/posts/${post.category}/${post.id}`}
           className={clsx(
@@ -59,7 +59,7 @@ export function Card({ post }: Props) {
             </div>
           </div>
         </Link>
-      </FadeInBox>
+      </FadeInObserver>
     </li>
   )
 }

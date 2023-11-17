@@ -5,7 +5,7 @@ import { useSearchParams, useRouter, usePathname } from 'next/navigation'
 import clsx from 'clsx'
 import { Post } from '@types'
 import { Button } from '@/components/ui/Button'
-import { FadeInBox } from '@/components/ui/FadeInBox'
+import { FadeInObserver } from '@/components/ui/FadeInObserver'
 import { Heading } from '@/components/ui/Heading'
 import { config } from '@/data/siteConfig'
 import { Card } from './Card'
@@ -43,9 +43,9 @@ export function PostList({ headingText, posts, perPage = config.POST_PER_PAGE }:
 
   return (
     <>
-      <FadeInBox className={clsx('w-full')}>
+      <FadeInObserver className={clsx('w-full')}>
         <Heading level={headingLevel}>{headingText}</Heading>
-      </FadeInBox>
+      </FadeInObserver>
       <ul className={clsx('w-full flex flex-wrap gap-base')}>
         {sliced.length > 0 ? (
           sliced.map((post) => <Card key={`${post.category}/${post.id}`} post={post} />)
@@ -57,9 +57,9 @@ export function PostList({ headingText, posts, perPage = config.POST_PER_PAGE }:
       </ul>
       {showButton && (
         <div className={clsx('w-full')}>
-          <FadeInBox className={clsx('w-1col m-auto')}>
+          <FadeInObserver className={clsx('w-1col m-auto')}>
             <Button onClick={handleClick}>More...</Button>
-          </FadeInBox>
+          </FadeInObserver>
         </div>
       )}
     </>

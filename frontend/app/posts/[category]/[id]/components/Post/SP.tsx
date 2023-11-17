@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import type { Post } from '@types'
-import { FadeInBox } from '@/components/ui/FadeInBox'
+import { FadeInObserver } from '@/components/ui/FadeInObserver'
 import { Content } from './Content'
 import { Cover } from './Cover'
 import { TableOfContent } from './TableOfContent'
@@ -10,10 +10,10 @@ type Props = {
 }
 export function PostSP({ post }: Props) {
   return (
-    <FadeInBox className={clsx('w-full')}>
+    <FadeInObserver className={clsx('w-full')}>
       <Cover post={post} />
       {post.useToc && <TableOfContent reactNode={post.toc} />}
       <Content reactNode={post.content} />
-    </FadeInBox>
+    </FadeInObserver>
   )
 }
