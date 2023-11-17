@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import type { Post } from '@types'
+import type { Post } from 'types'
 import { FadeInObserver } from '@/components/ui/FadeInObserver'
 import { Content } from './Content'
 import { Cover } from './Cover'

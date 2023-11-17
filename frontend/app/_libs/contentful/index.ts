@@ -1,6 +1,6 @@
 import '@contentful/rich-text-types'
 import { createClient } from 'contentful'
-import { Post } from '@types'
+import { Post } from 'types'
 import { documentToContent } from './documentToContent'
 import { documentToTableOfContent } from './documentToTableOfContent'
 

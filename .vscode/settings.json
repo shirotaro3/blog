@@ -10,5 +10,14 @@
     "strings": true
   },
   "typescript.referencesCodeLens.enabled": true,
-  "cSpell.words": ["nextjs", "consts", "tailwindcss", "superjson", "clsx", "contentful", "INLINES"]
+  "cSpell.words": [
+    "nextjs",
+    "consts",
+    "tailwindcss",
+    "superjson",
+    "clsx",
+    "contentful",
+    "INLINES",
+    "typecheck"
+  ]
 }

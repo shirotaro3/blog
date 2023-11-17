@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { useSearchParams, useRouter, usePathname } from 'next/navigation'
 import clsx from 'clsx'
-import { Post } from '@types'
+import { Post } from 'types'
 import { Button } from '@/components/ui/Button'
 import { FadeInObserver } from '@/components/ui/FadeInObserver'
 import { Heading } from '@/components/ui/Heading'

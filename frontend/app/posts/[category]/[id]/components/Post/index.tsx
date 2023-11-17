@@ -1,6 +1,6 @@
 'use client'
 
-import type { Post } from '@types'
+import type { Post } from 'types'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { PostPC } from './PC'
 import { PostSP } from './SP'

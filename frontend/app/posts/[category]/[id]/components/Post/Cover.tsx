@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
-import type { Post } from '@types'
+import type { Post } from 'types'
 import { categories } from '@/data/categories'
 
 type Props = {

@@ -72,6 +72,15 @@ importers:
         specifier: 5.0.4
         version: 5.0.4
 
+  common/types:
+    devDependencies:
+      eslint-config-common:
+        specifier: workspace:*
+        version: link:../eslint-config
+      typescript:
+        specifier: 5.0.4
+        version: 5.0.4
+
   frontend:
     dependencies:
       clsx:
@@ -156,6 +165,9 @@ importers:
       tailwindcss-content-visibility:
         specifier: ^0.1.0
         version: 0.1.0(tailwindcss@3.3.2)
+      types:
+        specifier: workspace:*
+        version: link:../common/types
       typescript:
         specifier: 5.0.4
         version: 5.0.4

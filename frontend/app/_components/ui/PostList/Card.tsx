@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
-import type { Post } from '@types'
+import type { Post } from 'types'
 import { FadeInObserver } from '@/components/ui/FadeInObserver'
 import { categories } from '@/data/categories'
 
