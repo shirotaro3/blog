@@ -33,7 +33,7 @@ const options = {
             )}
           >
             <Image
-              src={node.data.target.fields.file.url + `?q=50&w=${width}&h=${height}&fm=webp`}
+              src={node.data.target.fields.file.url + `?q=70&w=${width}&h=${height}&fm=webp`}
               alt={node.data.target.fields.title}
               width={width}
               height={node.data.target.fields.file.details.image.height * (width / height)}

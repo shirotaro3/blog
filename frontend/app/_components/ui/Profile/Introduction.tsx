@@ -7,9 +7,11 @@ export function Introduction() {
       <ul className={clsx('list-disc list-inside py-5 px-2')}>
         <li>199X年生まれ</li>
         <li>首都圏在住</li>
-        <li>Webエンジニア</li>
+        <li>Webエンジニア風</li>
         <li>趣味：旅行</li>
+        <li>動物好き</li>
       </ul>
+      <p className="px-4 pb-2">趣味の旅行や技術に関する記事を書いています。</p>
     </div>
   )
 }
