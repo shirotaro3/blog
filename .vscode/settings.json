@@ -18,6 +18,7 @@
     "clsx",
     "contentful",
     "INLINES",
-    "typecheck"
+    "typecheck",
+    "unoptimized"
   ]
 }
