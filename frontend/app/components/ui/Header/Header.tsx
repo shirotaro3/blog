@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { config } from '@/data/siteConfig'
+import { site } from '@/data/site'
 import { NavigationButton } from './NavigationButton'
 
 export function Header() {
@@ -13,14 +13,14 @@ export function Header() {
         <div className="items-center md:gap-10 text-white">
           {pathname === '/' ? (
             <h1 className="inline-block text-xl md:text-2xl font-bold drop-shadow px-4 md:px-6 py-1 md:py-2">
-              {config.SITE_TITLE}
+              {site.title}
             </h1>
           ) : (
             <Link
               href="/"
               className="inline-block text-xl md:text-2xl font-bold drop-shadow px-4 md:px-6 py-1 md:py-2"
             >
-              {config.SITE_TITLE}
+              {site.title}
             </Link>
           )}
         </div>

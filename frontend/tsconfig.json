@@ -25,7 +25,7 @@
       "@/functions/*": ["./app/functions/*"],
       "@/hooks/*": ["./app/hooks/*"],
       "@/libs/*": ["./app/libs/*"],
-      "@/data/*": ["./app/_data/*"],
+      "@/data/*": ["./app/data/*"],
       "@/public/*": ["./public/*"]
     }
   },

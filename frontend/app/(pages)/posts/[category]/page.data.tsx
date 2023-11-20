@@ -1,17 +1,17 @@
 import { categories } from '@/data/categories'
-import { config } from '@/data/siteConfig'
+import { site } from '@/data/site'
 
 export async function generateMetadata({ params: { category } }: any) {
   const title = `${categories[category]} に関する記事`
   return {
-    title: `${title} | ${config.SITE_TITLE}`,
-    description: config.SITE_DESCRIPTION,
+    title: `${title} | ${site.title}`,
+    description: site.description,
     openGraph: {
       title,
-      // image: `${config.SITE_URL}/${post.cover}`,
-      description: config.SITE_DESCRIPTION,
-      url: `${config.SITE_URL}/posts/${category}`,
-      site_name: config.SITE_TITLE,
+      // image: `${site.url}/${post.cover}`,
+      description: site.description,
+      url: `${site.url}/posts/${category}`,
+      site_name: site.title,
     },
     icons: {
       other: {

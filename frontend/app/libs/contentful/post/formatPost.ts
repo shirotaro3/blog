@@ -1,5 +1,5 @@
-import { DocumentToContent } from './DocumentToContent'
-import { DocumentToTableOfContent } from './DocumentToTableOfContent'
+import { documentToContent } from './documentToContent'
+import { documentToTableOfContent } from './documentToTableOfContent'
 
 // あとで型ちゃんと定義する
 export function formatPost(post: any) {
@@ -8,8 +8,8 @@ export function formatPost(post: any) {
     title: post.fields.title,
     category: post.fields.category,
     description: post.fields.description,
-    content: DocumentToContent(post.fields.content),
-    toc: DocumentToTableOfContent(post.fields.content),
+    content: documentToContent(post.fields.content),
+    toc: documentToTableOfContent(post.fields.content),
     cover: {
       url: post.fields.cover.fields.file.url,
       width: post.fields.cover.fields.file.details.image.width,
@@ -19,4 +19,8 @@ export function formatPost(post: any) {
     lastUpdated: post.fields.lastUpdated,
     useToc: post.fields.useToc,
   }
+}
+
+export const formatPosts = (posts: any) => {
+  return posts.map((post: any) => formatPost(post))
 }

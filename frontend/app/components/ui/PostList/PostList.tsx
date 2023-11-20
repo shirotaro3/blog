@@ -7,7 +7,7 @@ import { Post } from 'types'
 import { Button } from '@/components/ui/Button'
 import { FadeInObserver } from '@/components/ui/FadeInObserver'
 import { Heading } from '@/components/ui/Heading'
-import { config } from '@/data/siteConfig'
+import { site } from '@/data/site'
 import { Card } from './Card'
 
 type Props = {
@@ -16,7 +16,7 @@ type Props = {
   posts: Post[]
 }
 
-export function PostList({ headingText, posts, perPage = config.POST_PER_PAGE }: Props) {
+export function PostList({ headingText, posts, perPage = site.postPerPage }: Props) {
   const { replace } = useRouter()
   const pathname = usePathname()
   const search = useSearchParams()

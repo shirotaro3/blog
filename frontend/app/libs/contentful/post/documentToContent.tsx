@@ -64,6 +64,6 @@ const options = {
   },
 }
 
-export function DocumentToContent(document: Document) {
+export function documentToContent(document: Document) {
   return documentToReactComponents(document, options)
 }

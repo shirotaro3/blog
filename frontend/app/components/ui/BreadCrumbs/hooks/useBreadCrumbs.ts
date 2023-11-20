@@ -1,7 +1,7 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import { sitemap } from '@/data/sitemap'
+import { sitemap } from '../data/sitemap'
 
 function getPaths(pathname: string) {
   const hierarchies = pathname

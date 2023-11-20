@@ -1,15 +1,15 @@
-import { config } from '@/data/siteConfig'
+import { site } from '@/data/site'
 
 export async function generateMetadata() {
   return {
-    title: config.SITE_TITLE,
-    description: config.SITE_DESCRIPTION,
+    title: site.title,
+    description: site.description,
     openGraph: {
-      title: config.SITE_TITLE,
-      description: config.SITE_DESCRIPTION,
-      // image: `${config.SITE_URL}/${post.cover}`,
-      url: config.SITE_URL,
-      site_name: config.SITE_TITLE,
+      title: site.title,
+      description: site.description,
+      // image: `${site.url}/${post.cover}`,
+      url: site.url,
+      site_name: site.title,
     },
     // TODO: ここだけpreconnect効かない
     icons: {
