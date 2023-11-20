@@ -1,4 +1,3 @@
-// import { Image } from '@/components/ui/Image'
 import Image from 'next/image'
 import clsx from 'clsx'
 

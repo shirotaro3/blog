@@ -10,7 +10,6 @@ export function NavigationButton() {
     setIsOpen((prev) => !prev)
   }
 
-  // TODO: アイコン作る
   return (
     <button onClick={handleClick} className={clsx('font-bold text-xl text-white drop-shadow')}>
       <Icon className={clsx('w-5 h-5', 'lg:w-6 lg:h-6')} />

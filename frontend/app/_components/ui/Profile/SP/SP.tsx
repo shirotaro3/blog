@@ -1,8 +1,8 @@
 import clsx from 'clsx'
 import { FadeInObserver } from '@/components/ui/FadeInObserver'
 import { Heading } from '@/components/ui/Heading'
-import { AuthorImage } from './AuthorImage'
-import { Introduction } from './Introduction'
+import { AuthorImage } from '../AuthorImage'
+import { Introduction } from '../Introduction'
 
 export function ProfileSP() {
   return (

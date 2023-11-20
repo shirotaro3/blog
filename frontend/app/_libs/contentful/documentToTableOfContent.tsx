@@ -34,7 +34,7 @@ const options = {
   },
 }
 
-export function documentToTableOfContent(document: Document) {
+export function DocumentToTableOfContent(document: Document) {
   const headings: TopLevelBlock[] = document.content.filter((node) =>
     headingTypes.includes(node.nodeType),
   )
