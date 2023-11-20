@@ -1,13 +1,5 @@
-import { RootLayout } from '@/components/layout/RootLayout'
-import { Profile } from '@/components/ui/Profile'
 import { config } from '@/data/siteConfig'
-import { getAllPosts, getPostById } from '@/libs/contentful'
-import { Post } from './components/Post'
-
-export async function generateStaticParams() {
-  const posts = await getAllPosts()
-  return posts.map((post) => ({ category: post.category, id: post.id }))
-}
+import { getPostById, getAllPosts } from '@/libs/contentful'
 
 export async function generateMetadata({ params: { category, id } }: any) {
   const post = await getPostById(id)
@@ -38,18 +30,7 @@ export async function generateMetadata({ params: { category, id } }: any) {
   }
 }
 
-export default async function Blog({
-  params: { category, id },
-}: {
-  params: { category: string; id: string }
-}) {
-  const post = await getPostById(id)
-  return (
-    <RootLayout>
-      <article className="flex flex-wrap gap-base">
-        <Post post={post} />
-        <Profile />
-      </article>
-    </RootLayout>
-  )
+export async function generateStaticParams() {
+  const posts = await getAllPosts()
+  return posts.map((post) => ({ category: post.category, id: post.id }))
 }

@@ -1,3 +1,5 @@
+// 全てcontentfulに移行したい
+
 export const config = {
   SITE_TITLE: "YSK's note",
   SITE_DESCRIPTION: 'YSKによる趣味の旅行や技術に関するブログです。',

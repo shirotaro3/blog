@@ -21,10 +21,10 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["./app/_components/*"],
-      "@/features/*": ["./app/_features/*"],
-      "@/hooks/*": ["./app/_hooks/*"],
-      "@/libs/*": ["./app/_libs/*"],
+      "@/components/*": ["./app/components/*"],
+      "@/functions/*": ["./app/functions/*"],
+      "@/hooks/*": ["./app/hooks/*"],
+      "@/libs/*": ["./app/libs/*"],
       "@/data/*": ["./app/_data/*"],
       "@/public/*": ["./public/*"]
     }
