@@ -3,7 +3,7 @@ import clsx from 'clsx'
 
 export function AuthorImage() {
   return (
-    <div className={clsx('text-sm bg-brightness-80 px-4 pt-4 lg:p-0')}>
+    <div className={clsx('text-sm bg-brightness-80 px-3 pt-3 lg:p-0')}>
       <div className={clsx('bg-profile')}>
         <Image
           src="/img/kawauso.webp"

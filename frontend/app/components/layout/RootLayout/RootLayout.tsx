@@ -14,12 +14,12 @@ export function RootLayout({ children }: Props) {
       <Header />
       <div
         className={clsx(
-          'flex-grow bg-grayscale-200 flex flex-col bg-silhouette bg-repeat-x',
-          'md:pt-[var(--header)] md:bg-left-top-80 md:bg-fixed',
+          'flex-grow bg-grayscale-200 flex flex-col bg-silhouette_sp bg-repeat-x',
+          'md:pt-[var(--header)] md:bg-left-top-80 md:bg-fixed md:bg-silhouette',
         )}
       >
         <main className={clsx('base-container pb-8 min-h-main overflow-hidden')}>
-          <nav className={clsx('py-8')}>
+          <nav className={clsx('py-6', 'md:py-8')}>
             <BreadCrumbs />
           </nav>
           {children}

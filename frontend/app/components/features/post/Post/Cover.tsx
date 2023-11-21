@@ -43,8 +43,7 @@ export function Cover({ post }: Props) {
           <div
             className={clsx(
               'flex justify-center items-center text-center p-3 bg-black bg-opacity-20 text-white font-bold text-2xl w-full',
-              'md:text-3xl',
-              post.useToc ? 'lg:text-3xl' : 'lg:text-4xl',
+              'md:text-4xl',
             )}
           >
             <h1 className={clsx('mx-3 md:mx-5')}>{post.title}</h1>

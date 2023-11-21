@@ -15,7 +15,7 @@ export function Header() {
   }
 
   return (
-    <header className="bg-building md:fixed relative top-0 z-10 overflow-hidden w-full h-[var(--header)]">
+    <header className="bg-building_sp md:bg-building md:fixed relative top-0 z-10 overflow-hidden w-full h-[var(--header)]">
       <div className="base-container h-[var(--header)] relative md:bg-white-gradient-100 z-10 flex items-center">
         <div className="items-center md:gap-10 text-white">
           {pathname === '/' ? (
@@ -32,10 +32,7 @@ export function Header() {
           )}
         </div>
         <div className="flex items-end justify-center gap-3 md:gap-5 absolute right-5 lg:right-10">
-          <button
-            onClick={handleClick}
-            className={clsx('font-bold text-xl text-white drop-shadow')}
-          >
+          <button onClick={handleClick} className={clsx('drop-shadow')}>
             <Icon className={clsx('w-5 h-5', 'lg:w-6 lg:h-6')} />
           </button>
         </div>
