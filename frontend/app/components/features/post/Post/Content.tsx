@@ -1,7 +1,8 @@
+import { ReactNode } from 'react'
 import clsx from 'clsx'
 
 type Props = {
-  reactNode: React.ReactNode
+  reactNode: ReactNode[]
 }
 
 export function Content({ reactNode }: Props) {

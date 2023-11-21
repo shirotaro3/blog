@@ -1,4 +1,4 @@
-import { Suspense } from 'react'
+import { Suspense, ReactNode } from 'react'
 import { Metadata } from 'next'
 import { Analytics } from '@/components/functional/Analytics'
 import { Footer } from '@/components/ui/Footer'
@@ -14,7 +14,11 @@ export const metadata: Metadata = {
   robots: 'noindex',
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+type Props = {
+  children: ReactNode[]
+}
+
+export default function RootLayout({ children }: Props) {
   return (
     <html lang="ja">
       <body className="relative">

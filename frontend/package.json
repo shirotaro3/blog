@@ -34,6 +34,7 @@
     "@vitest/coverage-v8": "^0.34.6",
     "autoprefixer": "^10.4.16",
     "crypto": "^1.0.1",
+    "dotenv": "^16.3.1",
     "eslint": "8.41.0",
     "eslint-config-common": "workspace:*",
     "postcss": "8.4.23",

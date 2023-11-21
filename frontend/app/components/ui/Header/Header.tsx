@@ -2,11 +2,18 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import clsx from 'clsx'
+import { useHamburgerMenu } from '@/components/ui/NavigationMenu'
 import { site } from '@/data/site'
-import { NavigationButton } from './NavigationButton'
+import Icon from '@/public/svg/search.svg'
 
 export function Header() {
   const pathname = usePathname()
+  const [, setIsOpen] = useHamburgerMenu()
+  const handleClick = () => {
+    setIsOpen((prev) => !prev)
+  }
+
   return (
     <header className="bg-building md:fixed relative top-0 z-10 overflow-hidden w-full h-[var(--header)]">
       <div className="base-container h-[var(--header)] relative md:bg-white-gradient-100 z-10 flex items-center">
@@ -25,7 +32,12 @@ export function Header() {
           )}
         </div>
         <div className="flex items-end justify-center gap-3 md:gap-5 absolute right-5 lg:right-10">
-          <NavigationButton />
+          <button
+            onClick={handleClick}
+            className={clsx('font-bold text-xl text-white drop-shadow')}
+          >
+            <Icon className={clsx('w-5 h-5', 'lg:w-6 lg:h-6')} />
+          </button>
         </div>
       </div>
     </header>

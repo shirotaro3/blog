@@ -1,5 +1,7 @@
+import { ReactNode } from 'react'
+
 type Props = {
-  reactNode: React.ReactNode
+  reactNode: ReactNode
 }
 
 export function TableOfContent({ reactNode }: Props) {

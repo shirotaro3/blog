@@ -1,7 +1,14 @@
 import { site } from '@/data/site'
 import { getPostById, getAllPosts } from '@/libs/contentful'
 
-export async function generateMetadata({ params: { category, id } }: any) {
+type Props = {
+  params: {
+    category: string
+    id: string
+  }
+}
+
+export async function generateMetadata({ params: { category, id } }: Props) {
   const post = await getPostById(id)
   return {
     title: `${post.title} | ${site.title}`,

@@ -1,9 +1,10 @@
 import { createElement } from 'react'
+import { ReactNode, JSX } from 'react'
 import clsx from 'clsx'
 
 type Props = {
   level: number
-  children: any
+  children: JSX.Element | ReactNode // TODO: 時間ある時にちゃんとやる
   className?: string
 }
 
@@ -17,6 +18,6 @@ export function Heading({ level, children, className }: Props) {
     {
       className: clsx(className, 'font-bold text-lg box-gray'),
     },
-    [...children],
+    children,
   )
 }

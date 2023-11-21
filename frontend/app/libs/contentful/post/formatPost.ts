@@ -1,8 +1,9 @@
+import { Post } from 'types'
+import { PostSkeletonEntry } from '../types/postSkeleton'
 import { documentToContent } from './documentToContent'
 import { documentToTableOfContent } from './documentToTableOfContent'
 
-// あとで型ちゃんと定義する
-export function formatPost(post: any) {
+export function formatPost(post: PostSkeletonEntry): Post {
   return {
     id: post.sys.id,
     title: post.fields.title,
@@ -11,9 +12,9 @@ export function formatPost(post: any) {
     content: documentToContent(post.fields.content),
     toc: documentToTableOfContent(post.fields.content),
     cover: {
-      url: post.fields.cover.fields.file.url,
-      width: post.fields.cover.fields.file.details.image.width,
-      height: post.fields.cover.fields.file.details.image.height,
+      url: post.fields.cover?.fields.file?.url || '',
+      width: post.fields.cover?.fields.file?.details.image?.width || 0,
+      height: post.fields.cover?.fields.file?.details.image?.height || 0,
     },
     date: post.fields.date,
     lastUpdated: post.fields.lastUpdated,
@@ -21,6 +22,6 @@ export function formatPost(post: any) {
   }
 }
 
-export const formatPosts = (posts: any) => {
-  return posts.map((post: any) => formatPost(post))
+export const formatPosts = (posts: PostSkeletonEntry[]): Post[] => {
+  return posts.map((post) => formatPost(post))
 }

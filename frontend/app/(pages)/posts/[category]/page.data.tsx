@@ -1,7 +1,13 @@
 import { categories } from '@/data/categories'
 import { site } from '@/data/site'
 
-export async function generateMetadata({ params: { category } }: any) {
+type Props = {
+  params: {
+    category: string
+  }
+}
+
+export async function generateMetadata({ params: { category } }: Props) {
   const title = `${categories[category]} に関する記事`
   return {
     title: `${title} | ${site.title}`,

@@ -1,9 +1,14 @@
+import { ReactNode, JSX } from 'react'
 import clsx from 'clsx'
 import { BreadCrumbs } from '@/components/ui/BreadCrumbs'
 import { Header } from '@/components/ui/Header'
 
+type Props = {
+  children: JSX.Element | ReactNode // TODO: 時間ある時にちゃんとやる
+}
+
 // スクロールの謎挙動対策
-export function RootLayout({ children }: { children: React.ReactNode }) {
+export function RootLayout({ children }: Props) {
   return (
     <>
       <Header />

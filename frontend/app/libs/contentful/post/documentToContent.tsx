@@ -1,27 +1,27 @@
+import { ReactNode } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import { Document, BLOCKS, INLINES } from '@contentful/rich-text-types'
+import { Document, BLOCKS, INLINES, NodeData } from '@contentful/rich-text-types'
 import clsx from 'clsx'
 
 const crypto = require('crypto')
 
 const MAX_IMAGE_WIDTH = 600
 
-// TODO: 型定義を調べる
 const options = {
   renderNode: {
     // 見出しの表示 idを付与する
-    [BLOCKS.HEADING_2]: (node: any, children: React.ReactNode) => {
+    [BLOCKS.HEADING_2]: (node: NodeData, children: ReactNode) => {
       const anchor = crypto.createHash('md5').update(node.content[0].value).digest('hex')
       return <h2 id={anchor}>{children}</h2>
     },
-    [BLOCKS.HEADING_3]: (node: any, children: React.ReactNode) => {
+    [BLOCKS.HEADING_3]: (node: NodeData, children: ReactNode) => {
       const anchor = crypto.createHash('md5').update(node.content[0].value).digest('hex')
       return <h3 id={anchor}>{children}</h3>
     },
     // 画像の表示 最大幅を超える場合は縮小する
-    [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
+    [BLOCKS.EMBEDDED_ASSET]: (node: NodeData) => {
       const originalWidth = node.data.target.fields.file.details.image.width
       const width = originalWidth > MAX_IMAGE_WIDTH ? MAX_IMAGE_WIDTH : originalWidth
       const height = node.data.target.fields.file.details.image.width
@@ -44,7 +44,7 @@ const options = {
       )
     },
     // リンクの表示 外部リンクの場合は別タブで開く
-    [INLINES.HYPERLINK]: (node: any, children: React.ReactNode) => {
+    [INLINES.HYPERLINK]: (node: NodeData, children: ReactNode) => {
       if (node.data.uri.startsWith('/')) {
         return <Link href={node.data.uri}>{children}</Link>
       }
@@ -56,11 +56,9 @@ const options = {
     },
   },
   renderText: (text: string) => {
-    return text
-      .split('\n')
-      .reduce((children: React.ReactNode[], textSegment: string, index: number) => {
-        return [...children, index > 0 && <br key={index} />, textSegment]
-      }, [])
+    return text.split('\n').reduce((children: ReactNode[], textSegment: string, index: number) => {
+      return [...children, index > 0 && <br key={index} />, textSegment]
+    }, [])
   },
 }
 
