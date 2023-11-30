@@ -9,7 +9,7 @@ type Props = {
   post: Post
 }
 
-export function Post({ post }: Props) {
+export function PostPage({ post }: Props) {
   const isMobile = useMediaQuery({ query: '(max-width: 1023px)' })
   return isMobile ? <PostSP post={post} /> : <PostPC post={post} />
 }

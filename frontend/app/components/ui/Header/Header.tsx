@@ -15,7 +15,12 @@ export function Header() {
   }
 
   return (
-    <header className="bg-building_sp md:bg-building md:fixed relative top-0 z-10 overflow-hidden w-full h-[var(--header)]">
+    <header
+      className={clsx(
+        'bg-building_sp relative top-0 z-10 overflow-hidden w-full h-[var(--header)]',
+        'md:bg-building',
+      )}
+    >
       <div className="base-container h-[var(--header)] relative md:bg-white-gradient-100 z-10 flex items-center">
         <div className="items-center md:gap-10 text-white">
           {pathname === '/' ? (

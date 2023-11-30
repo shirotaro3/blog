@@ -26,8 +26,8 @@ export function FadeInObserver({ children, className, variant = 'normal' }: Prop
         inViewOuterClass,
         variantClass,
         'relative',
-        'after:absolute after:scale-x-0 after:w-full after:border-y after:top-0 after:bottom-0 box-content',
-        'before:absolute before:scale-y-0 before:h-full before:border-x before:left-0 before:right-0 box-content',
+        'after:absolute after:scale-x-0 after:w-full after:border-y after:top-0 after:bottom-0',
+        'before:absolute before:scale-y-0 before:h-full before:border-x before:left-0 before:right-0',
       )}
     >
       <div ref={ref} className={clsx(inViewInnerClass, 'h-full w-full')}>
