@@ -35,10 +35,12 @@ export function Card({ post }: Props) {
               <div className={clsx('absolute flex justify-center items-center w-full h-full')}>
                 <div
                   className={clsx(
-                    'flex justify-center items-center text-center p-3 bg-black bg-opacity-20 text-white font-bold text-xl w-full',
+                    'flex justify-center items-center text-center px-3 h-16 bg-black bg-opacity-20 w-full',
                   )}
                 >
-                  <div className={clsx('mx-5')}>{post.title}</div>
+                  <div className={clsx('mx-5 drop-shadow-md text-xl font-bold text-white')}>
+                    {post.title}
+                  </div>
                 </div>
               </div>
               <Image

@@ -1,5 +1,5 @@
 import { Post } from 'types'
-import { PostList } from '@/components/ui/PostList'
+import { PostList } from '@/components/feature/post/PostList'
 import { Profile } from '@/components/ui/Profile'
 
 type Props = {
