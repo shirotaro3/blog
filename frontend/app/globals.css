@@ -21,9 +21,6 @@
   .box-white {
     @apply box-base bg-brightness-80;
   }
-  .box-gray {
-    @apply box-base bg-brightness-40;
-  }
   /* flex */
   .gap-base {
     @apply gap-3 md:gap-5 lg:gap-4 xl:gap-8;
@@ -58,14 +55,10 @@
     @apply text-base;
   }
   .md-content h2 {
-    @apply text-xl px-2 py-3 border-b border-l-4 border-grayscale-400 font-bold mt-14;
+    @apply text-xl px-2 py-3 border-b border-l-4 border-primary-main font-bold my-14;
   }
   .md-content h3 {
-    @apply text-lg px-2 pb-2 pt-1 border-b border-grayscale-400 font-bold mt-8;
-  }
-  .md-content h2 a,
-  .md-content h3 a {
-    @apply text-current hover:underline no-underline text-xs inline-block pr-1;
+    @apply text-lg px-2 pb-2 pt-1 border-b border-primary-main font-bold my-10;
   }
   .md-content p {
     @apply mt-6;
@@ -80,7 +73,7 @@
     @apply underline lg:hover:no-underline;
   }
   .md-content hr {
-    @apply my-10 border-grayscale-400;
+    @apply my-10 border-primary-main;
   }
   /* others */
   .lg-only-border-b {
@@ -111,5 +104,5 @@
   @media (min-width: 760px) {
     --header: 80px;
   }
-  @apply md:scroll-p-[var(--header)] text-grayscale-800;
+  @apply text-grayscale-800 scroll-smooth;
 }

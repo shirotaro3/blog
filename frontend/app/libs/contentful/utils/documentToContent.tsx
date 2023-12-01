@@ -7,7 +7,7 @@ import clsx from 'clsx'
 
 const crypto = require('crypto')
 
-const MAX_IMAGE_WIDTH = 600
+const MAX_IMAGE_WIDTH = 700
 
 const options = {
   renderNode: {
@@ -26,19 +26,17 @@ const options = {
       const width = originalWidth > MAX_IMAGE_WIDTH ? MAX_IMAGE_WIDTH : originalWidth
       const height = node.data.target.fields.file.details.image.width
       return (
-        <div className="mt-6">
-          <figure
-            className={clsx(
-              'border px-2 pt-2 inline-block border-grayscale-400 max-w-[calc(600px+1rem)]',
-            )}
-          >
+        <div className={clsx('my-8 flex justify-center', 'lg:my-12')}>
+          <figure className={clsx('inline-block max-w-[calc(700px+1rem)] px-4', 'lg:px-0')}>
             <Image
               src={node.data.target.fields.file.url + `?q=70&w=${width}&h=${height}&fm=webp`}
               alt={node.data.target.fields.title}
               width={width}
               height={node.data.target.fields.file.details.image.height * (width / height)}
             />
-            <figcaption className={clsx('p-2')}>{node.data.target.fields.title}</figcaption>
+            <figcaption className={clsx('p-2 text-sm text-center')}>
+              {node.data.target.fields.title}
+            </figcaption>
           </figure>
         </div>
       )

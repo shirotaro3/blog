@@ -4,7 +4,7 @@ import { profile } from './data/profile'
 export function Introduction() {
   return (
     <div className={clsx('flex flex-col lg:h-full box-white text-sm')}>
-      <div className={clsx('font-bold text-lg p-2 border-b border-grayscale-400')}>
+      <div className={clsx('font-bold text-lg p-2 border-b border-primary-main')}>
         {profile.name}
       </div>
       <ul className={clsx('list-disc list-inside py-5 px-2')}>

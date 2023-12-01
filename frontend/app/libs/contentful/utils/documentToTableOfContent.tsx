@@ -14,20 +14,22 @@ const options = {
     [BLOCKS.HEADING_2]: (node: NodeData, children: ReactNode) => {
       const anchor = crypto.createHash('md5').update(node.content[0].value).digest('hex')
       return (
-        <li className={clsx('pt-2')}>
-          <Link href={`#${anchor}`} className={clsx('link')}>
-            {children}
-          </Link>
+        <li
+          className={clsx(
+            'py-1 pl-10 relative flex items-center',
+            'lg:pl-6',
+            'before:absolute before:h-4 before:w-4 before:-left-1.5 before:bg-primary-main before:rounded-full',
+          )}
+        >
+          <Link href={`#${anchor}`}>{children}</Link>
         </li>
       )
     },
     [BLOCKS.HEADING_3]: (node: NodeData, children: ReactNode) => {
       const anchor = crypto.createHash('md5').update(node.content[0].value).digest('hex')
       return (
-        <li className={clsx('pt-2 ml-6 lg:text-sm')}>
-          <Link href={`#${anchor}`} className={clsx('link')}>
-            {children}
-          </Link>
+        <li className={clsx('py-1 pl-14 border-l-4 border-primary-main', 'lg:text-sm lg:pl-10')}>
+          <Link href={`#${anchor}`}>{children}</Link>
         </li>
       )
     },

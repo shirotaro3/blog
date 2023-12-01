@@ -14,9 +14,9 @@ const sizes = {
 }
 const variants = {
   primary:
-    'bg-blue-300 text-white lg:hover:bg-white lg:hover:text-blue-300 active:bg-white active:text-blue-300 border-blue-300',
+    'bg-primary-main text-white lg:hover:bg-white lg:hover:text-primary-main active:bg-white active:text-primary-main border-primary-main',
   'primary-invert':
-    'bg-white text-blue-300 lg:hover:bg-blue-300 lg:hover:text-white active:bg-blue-300 active:text-white border-blue-300',
+    'bg-white text-primary-main lg:hover:bg-primary-main lg:hover:text-white active:bg-primary-main active:text-white border-primary-main',
 }
 
 export function LinkButton({ children, href, size = 'lg', variant = 'primary' }: Props) {

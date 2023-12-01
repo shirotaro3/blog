@@ -1,8 +1,8 @@
 import '@contentful/rich-text-types'
 import { Post } from 'types'
-import { getContentfulClient } from '../getContentfulClient'
-import { PostSkeleton } from '../types/postSkeleton'
-import { formatPosts } from './formatPost'
+import { getContentfulClient } from './getContentfulClient'
+import { PostSkeleton } from './types/postSkeleton'
+import { formatPosts } from './utils'
 
 export const getAllPosts = async (): Promise<Post[]> => {
   const client = getContentfulClient()

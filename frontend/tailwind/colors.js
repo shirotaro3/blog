@@ -1,7 +1,10 @@
 // ここにない色は使わない
 module.exports = {
   colors: {
-    primary: '#93c5fd',
+    primary: {
+      main: '#93c5fd',
+      light: '#eff6ff',
+    },
     profile: '#94e4fc', // プロフィール画像背景色
     footer: '#a8620733', // 仮
     white: '#ffffff',
